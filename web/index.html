@@ -335,6 +335,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#writing-data" class="md-nav__link">
+    Writing Data
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -483,6 +490,13 @@
           <li class="md-nav__item">
   <a href="#reading-data" class="md-nav__link">
     Reading Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-data" class="md-nav__link">
+    Writing Data
   </a>
   
 </li>
@@ -763,6 +777,7 @@
 <li><code>v-model</code> - creates two way data-binding</li>
 <li><code>v-if</code> - displays an element only if the condition is true</li>
 <li><code>v-else</code> - compliment for <code>v-if</code></li>
+<li><code>v-on:change</code> or <code>:change</code> - runs a function when the element is changed</li>
 <li><code>v-on:click</code> or <code>:click</code> - runs a function when the element is clicked</li>
 </ul>
 <p>To see these in action, we can create some more HTML elements with Vue directives. Replace:</p>
@@ -838,6 +853,31 @@ var vm = new Vue({
 },
 </code></pre>
 <p>In Firebase Dashboard, if we now change the values within <code>color</code>, we should now see them update the checkboxes on our page, in real time!</p>
+<h3 id="writing-data">Writing Data</h3>
+<p>While we can recieve data from Firebase, we also want changes to the checkboxes to also be sent to Firebase. This can be done with the <code>v-on:change</code> directive.</p>
+<p>Start by adding a new method called <code>updateColor()</code> in our Vue's methods:</p>
+<pre><code>updateColor: function() {
+    database.ref('data/color').set(this.color);
+}
+</code></pre>
+<p>Next we want to enclose the checkboxes into a new form element with the directive like this:</p>
+<pre><code>&lt;form v-on:change="updateColor()"&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.r"&gt; Red
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.g"&gt; Green
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.b"&gt; Blue
+    &lt;/label&gt;
+&lt;/form&gt;
+</code></pre>
+<p>Similarily, we want to add an <code>v-on:click</code> directive to the button as well:</p>
+<pre><code>&lt;button type="button" v-on:click="selectAll(); updateColor()"&gt;Select All&lt;/button&gt;
+</code></pre>
+<p>Every time Vue detects a change in the <code>&lt;form&gt;</code> containing all the checkboxes, it will run the function that submits the changed <code>color</code> dictionary.</p>
+<p>If we tick/untick any of the checkboxes, we should also be able to now see the values get updated in Firebase Dashboard as well!</p>
                 
               
               
