@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Frontend - ECE196 IOT Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ECE196 IOT Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Frontend</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#intro-to-frontend" class="nav-link">Intro to Frontend</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#fundamentals" class="nav-link">Fundamentals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#frameworks" class="nav-link">Frameworks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#intro-to-vuejs" class="nav-link">Intro to Vue.js</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#adding-vue" class="nav-link">Adding Vue</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#one-way-data-binding" class="nav-link">One-Way Data Binding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#javascript-console" class="nav-link">JavaScript Console</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#two-way-data-binding" class="nav-link">Two-Way Data Binding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="intro-to-frontend">Intro to Frontend</h1>
+<p>The modern World Wide Web is truly a world of chaos and anarchy, with competing powers rising and falling, along with their preferred way of doing things. Brought to you by your favorite web browser!</p>
+<h2 id="fundamentals">Fundamentals</h2>
+<p>The most fundamental concepts of Web Development essentially boil down to these three (3):</p>
+<ul>
+<li>
+<p>HTML</p>
+<ul>
+<li>The most basic building blocks of a webpage.</li>
+<li>Most atomic elements are various "tags" containing information.</li>
+<li>Tags can have attributes to assign special characteristics or functionality to them.</li>
+<li>Tags can be nested.</li>
+<li>The browser reads all these tags and builds a DOM (Document Object Model)</li>
+<li>Example:<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1 id="title"&gt;I am a title font!&lt;/h2&gt;
+        &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>CSS</p>
+<ul>
+<li>Tells the browser how to render the website.</li>
+<li>Makes it look good!</li>
+<li>Defined by "selecting" specific HTML tags and setting styling attributes to them.</li>
+<li>Tells the browser how to render elements of the DOM.</li>
+<li>Example:<pre><code>body {
+    background-color: beige;
+    text-align: center;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>JavaScript</p>
+<ul>
+<li>Makes the website come alive!</li>
+<li>Can manipulate HTML elemeents in the DOM.</li>
+<li>Pieces of software (programming) that runs in the browser.</li>
+<li>Example:<pre><code>document.getElementById("title").innerHTML = "Hello JavaScript!";
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="exercise">Exercise</h3>
+<p>Starting an HTML document from scratch is fairly straightforward. </p>
+<ol>
+<li>Create a new folder for your project.</li>
+<li>In the folder, create a empty text file named <code>index.html</code> and open it in VS Code.</li>
+<li>By copying and pasting the examples shown previously, adding some extra tags, we can make this:<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My App&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;style&gt;
+        body {
+            background-color: beige;
+            text-align: center;
+        }
+    &lt;/style&gt;
+    &lt;body&gt;
+        &lt;h1 id="title"&gt;I am a title font!&lt;/h2&gt;
+        &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+        document.getElementById("title").innerHTML = "Hello JavaScript!";
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+</ol>
+<p>Notice:</p>
+<ul>
+<li>The background of the page is colored beige, and the text is centered on the page. This is consistent with the CSS styling we specified.</li>
+<li>The big <code>&lt;h1&gt;</code> text shows "Hello JavaScript", which is not the original text, but rather set by our JavaScript script. If we remove that JavaScript snippet from our page, this will no longer happen.</li>
+</ul>
+<p>We can also create more interesting behavior by changing the JavaScript. Try replacing the code in the <code>&lt;script&gt;</code> tag with this:</p>
+<pre><code>    setTimeout(function(){ 
+        document.getElementById("title").innerHTML = "Hello JavaScript!";
+    }, 1000);
+</code></pre>
+<p>And then save the file and refresh the page. Notice the text will now change after one (1) second!</p>
+<p>Note on refreshing: most modern browsers have a "lazy" refresh that doesn't always reload all our changes. To actually refresh we have to perform a "hard" refresh which in Chrome can be done by holding down Shift and refreshing, or right clicking the refresh button.</p>
+<h2 id="frameworks">Frameworks</h2>
+<p>To bring order to the wild atomized world wrought by HTML, CSS, and JavaScript, various competing powers have attempted to create structure with Web Frameworks.</p>
+<h3 id="what-are-frameworks">What are Frameworks?</h3>
+<ul>
+<li>Usually open source projects, sometimes maintained by big corps (Google, Facebook, etc). </li>
+<li>Introduce a standarized way of writing patterns of code that occur frequently.</li>
+<li><strong>Most importantly: greatly simplifies code and makes our lives easier!</strong></li>
+</ul>
+<h3 id="so-many-frameworks">So many Frameworks!</h3>
+<p><img alt="webitjsframeworks.png" src="../webitjsframeworks.png" /></p>
+<p>The World Wide Web is a fast paced world that changes frequently, and so do frameworks. Most frameworks commonly deployed today have only been created within the past decade. Choosing between the many competing options can be a daunting task.</p>
+<p>However to make our life easier and to get our app quickly off the ground without suffering too much learning curve, we are going to use this particular combination:</p>
+<ol>
+<li><strong>Vue.js</strong> - HTML+JavaScript Framework</li>
+<li><strong>Bootstrap</strong> - CSS framework</li>
+</ol>
+<h1 id="intro-to-vuejs">Intro to Vue.js</h1>
+<p>Vue is one of latest and greatest rising stars of the Frontend Framework scene. Compared to the more popular React or Angular, Vue is relatively easy to get working off the ground, without complicated setup.</p>
+<h2 id="adding-vue">Adding Vue</h2>
+<p>To include the Vue library into our page, we can use this script tag:</p>
+<pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>Note: Since the browser loads the DOM in order, we must place this before we write any Javascript code that uses Vue. The best place in our current page is after <code>&lt;body&gt;</code> but before <code>&lt;script&gt;</code>.</p>
+<p>Now if we open Developer Tools in our browser (F12 in Chrome), click the Console tab, we should now see some messages about Vue.</p>
+<p>Anyways, we can create a <code>Vue</code> object called <code>vm</code> (within the <code>script</code> block) like this:</p>
+<pre><code>    var vm = new Vue({})
+</code></pre>
+<p>Each Vue instance is defined by a dictionary with various fields specifying variables, functions, and special behavior. The ones we'll be using are:</p>
+<ul>
+<li><code>el</code> - string name of id of the HTML tag to contain the app</li>
+<li><code>data</code> - dictionary of variables used</li>
+<li><code>created</code> - special function that runs when the app is created (similar to setup() in Arduino)</li>
+<li><code>methods</code>- dictionary of methods/functions used</li>
+</ul>
+<p>So, before filling those fields, our instantiation should look like this:</p>
+<pre><code>    var vm = new Vue({
+        el: "",
+        data: {},
+        created: function() {},
+        methods: {}
+    })
+</code></pre>
+<p>Now for our HTML we want to create a new <code>&lt;div&gt;</code> element with <code>id="app"</code> to wrap the content of our page. Then we declare <code>el: "app"</code> in our Vue object. Our code should now look like this:</p>
+<pre><code>...
+&lt;body&gt;
+    &lt;div id="app"&gt;
+        &lt;h1 id="title"&gt;I am a title font!&lt;/h2&gt;
+        &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+...
+&lt;script&gt;
+    var vm = new Vue({
+        el: "#app",
+        data: {},
+        created: function() {},
+        methods: {}
+    })
+&lt;/script&gt;
+...
+</code></pre>
+<p>Note: we can remove the JavaScript code from the previous section.</p>
+<h2 id="one-way-data-binding">One-Way Data Binding</h2>
+<p>To witness the full power of Vue, we can set up what's called a data binding:</p>
+<ol>
+<li>Change the text in our <code>&lt;h1&gt;</code> to <code>{{ titleText }}</code>.</li>
+<li>Add a string <code>titleText</code> to data.</li>
+</ol>
+<p>Our code now:</p>
+<pre><code>...
+&lt;body&gt;
+    &lt;div id="app"&gt;
+        &lt;h1 id="title"&gt;{{ titleText }}&lt;/h2&gt;
+        &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+...
+&lt;script&gt;
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            titleText: "Hello World from Vue!"
+        },
+        created: function() {},
+        methods: {}
+    })
+&lt;/script&gt;
+...
+</code></pre>
+<p>Now if we refresh the page we should see that Vue changes the <code>titleText</code> into what we specified!</p>
+<h2 id="javascript-console">JavaScript Console</h2>
+<p>Another useful perk of Vue is how easy it is to debug our application with the built-in browser Console. To open the console in Chrome, we can open Developer Tools or press <code>F12</code> and click the Console tab.</p>
+<p>Our data fields are all properties of the Vue object, and since our Vue object is called <code>vm</code>, we can address <code>titleText</code> as <code>vm.titleText</code></p>
+<h3 id="exercise_1">Exercise</h3>
+<ol>
+<li>Try typing <code>vm.titleText</code> into the console. What does it output? is this expected?</li>
+<li>Try typing <code>vm.titleText = 'ECE 196'</code> into the console. Now look at the HTML page. What is the <code>&lt;h1&gt;</code> text now? </li>
+</ol>
+<p>One of the most powerful advantages of Vue data binding is how values in the HTML and JavaScript portions of our webpage are seamlessly connected, in real time.</p>
+<p>If we wanted to achieve the same with pure JavaScript, it would not only   take much more time writing and debugging more code, but the complexity would also grow exponentially when we add more stuff to our webpage. </p>
+<h2 id="two-way-data-binding">Two-Way Data Binding</h2>
+<p>We just saw how to get Vue to put variables into HTML, but we also want to be able to put HTML variables into Vue. One way to do this is with two-way data binding.</p>
+<p>Before we do that, we need to create something in HTML designed to handle user input. One type of common input is the checkbox. We can add three checkboxes to the page like this:</p>
+<pre><code>&lt;div id="app"&gt;
+    ...
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.r"&gt; Red
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.g"&gt; Green
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" v-model="color.b"&gt; Blue
+    &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Next we want to declare variables in Vue for these values to go. One way we can do this is to add a dictionary under <code>data</code> with 3 boolean values like this:</p>
+<pre><code>data: {
+    ...
+    color: {
+        r: false,
+        g: false,
+        b: false
+    }
+},
+</code></pre>
+<p>Now if we refresh the page, we should see our three checkboxes appear.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
