@@ -390,6 +390,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#margins" class="md-nav__link">
+    Margins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cards" class="md-nav__link">
     Cards
   </a>
@@ -399,6 +406,27 @@
           <li class="md-nav__item">
   <a href="#tables" class="md-nav__link">
     Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-adjustments" class="md-nav__link">
+    Final Adjustments
   </a>
   
 </li>
@@ -610,6 +638,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#margins" class="md-nav__link">
+    Margins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cards" class="md-nav__link">
     Cards
   </a>
@@ -619,6 +654,27 @@
           <li class="md-nav__item">
   <a href="#tables" class="md-nav__link">
     Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-adjustments" class="md-nav__link">
+    Final Adjustments
   </a>
   
 </li>
@@ -648,9 +704,9 @@
 <p>The modern World Wide Web is truly a world of chaos and anarchy, with competing powers rising and falling, along with their preferred way of doing things. Brought to you by your favorite web browser!</p>
 <h2 id="fundamentals">Fundamentals</h2>
 <p>The most fundamental concepts of Web Development essentially boil down to these three (3):</p>
-<ul>
+<ol>
 <li>
-<p>HTML</p>
+<p><strong>HTML</strong></p>
 <ul>
 <li>The most basic building blocks of a webpage.</li>
 <li>Most atomic elements are various "tags" containing information.</li>
@@ -668,7 +724,7 @@
 </ul>
 </li>
 <li>
-<p>CSS</p>
+<p><strong>CSS</strong></p>
 <ul>
 <li>Tells the browser how to render the website.</li>
 <li>Makes it look good!</li>
@@ -683,7 +739,7 @@
 </ul>
 </li>
 <li>
-<p>JavaScript</p>
+<p><strong>JavaScript</strong></p>
 <ul>
 <li>Makes the website come alive!</li>
 <li>Can manipulate HTML elemeents in the DOM.</li>
@@ -693,7 +749,7 @@
 </li>
 </ul>
 </li>
-</ul>
+</ol>
 <h4 id="getting-started">Getting Started</h4>
 <p>Starting an HTML document from scratch is fairly straightforward. </p>
 <ol>
@@ -1074,9 +1130,34 @@ var vm = new Vue({
 </code></pre>
 <p>One possible implementation on our page:</p>
 <p><img alt="layouts.png" src="../layouts.png" /></p>
+<h3 id="margins">Margins</h3>
+<p>Margins are useful to put set amounts of space between different elements.</p>
+<p>In Bootstrap, margins can be specified with <code>class</code> attributes with two letters and a number like this:</p>
+<ul>
+<li><code>class="mt-5"</code> puts a margin on top of size 5</li>
+<li><code>class="ml-2"</code> puts margin on the left of size 2</li>
+</ul>
+<p>They can also be combined:</p>
+<ul>
+<li><code>class="mt-5 mb-5"</code> will put a margin on both top and bottom of size 5</li>
+</ul>
+<p>We can also have margin on all sides:</p>
+<ul>
+<li><code>class="m-5"</code> will put a margin on all sides of size 5</li>
+</ul>
+<p>We can wrap our page title in a 1x1 container and give it some margin from the top of the page like this:</p>
+<pre><code>&lt;div class="container mt-5"&gt; 
+    &lt;div class="row"&gt;
+            &lt;div class="col-lg" style="text-align: center;"&gt;
+            &lt;h1 id="title"&gt;{{ titleText }}&lt;/h2&gt;
+            &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 <h3 id="cards">Cards</h3>
 <p>Cards are an all-purpose way to hold content. Different types of content can also be mix and matched in a card. Here is an example of a basic card:</p>
-<pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+<pre><code>&lt;div class="card"&gt;
     &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
         &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
         &lt;div class="card-body"&gt;
@@ -1092,7 +1173,7 @@ var vm = new Vue({
 <h3 id="tables">Tables</h3>
 <p>To improve our display of the "Selected Values", we can convert it into a Bootstrap table. Creating a table can first be done with HTML tags like this:</p>
 <pre><code>&lt;table class="table"&gt;
-    &lt;thead&gt;
+    &lt;thead class=".thead-light"&gt;
         &lt;tr&gt;
             &lt;th scope="col"&gt;Type&lt;/th&gt;
             &lt;th scope="col"&gt;Color&lt;/th&gt;
@@ -1129,6 +1210,48 @@ var vm = new Vue({
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Lists or tabular data of large or arbitrary sizes should be generated using the <code>v-for</code> directive (akin to a <code>for</code> loop), but since we aren't using any we won't go over it in this course.</p>
+</div>
+<p>Also, to get the icons to display properly, add this class to our custom <code>&lt;style&gt;</code> block:</p>
+<pre><code>.icon {
+    width: 2em;
+    height: 2em;
+}
+</code></pre>
+<p>Adding the table to one of the cards shown previously could look like this:</p>
+<p><img alt="table.png" src="../table.png" /></p>
+<h3 id="buttons">Buttons</h3>
+<p>Bootstrap also give us templates for buttons, as well as "button groups" which can combine adjacent buttons into a single bar.</p>
+<pre><code>&lt;div class="btn-group" role="group"&gt;
+    &lt;button v-on:click="selectAll(true)" type="button" class="btn btn-secondary"&gt;Select All&lt;/button&gt;
+    &lt;button v-on:click="selectAll(false)" type="button" class="btn btn-secondary"&gt;Deselect All&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="lists">Lists</h3>
+<p>We can use Bootstrap List Groups on top of an HTML list to make our sensor data card look nice.</p>
+<pre><code>&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item"&gt;Temperature: 40C &lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Humidity: 50%&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="final-adjustments">Final Adjustments</h3>
+<p>To make all the cards the same height we can add <code>d-flex</code> to each column <code>&lt;div&gt;</code>, and then add <code>w-100</code> to each card <code>&lt;div&gt;</code> so that the fill the column properly, like this:</p>
+<pre><code>                ...
+                &lt;div class="col-sm d-flex"&gt;
+                    &lt;div class="card w-100"&gt;
+                        ...
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Fine tuning layout specifics can get very time consuming so we won't go over too many tricky details.</p>
+</div>
+<p>Also, its a good idea to associate color with each entry on the LED table with some inline <code>style</code> attributes:</p>
+<pre><code>style="background-color: lightcoral;"
+style="background-color: lightgreen;"
+style="background-color: lightskyblue;"
 </code></pre>
                 
               
