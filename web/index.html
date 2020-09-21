@@ -1,129 +1,446 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
+    
+    
+      
         <title>Frontend - ECE196 IOT Documentation</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="..">ECE196 IOT Documentation</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../rpi/" class="nav-link">Raspberry Pi</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../fire/" class="nav-link">Firebase</a>
-                            </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Frontend</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../fire/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro-to-frontend" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="ECE196 IOT Documentation" class="md-header-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            ECE196 IOT Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Frontend
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ECE196 IOT Documentation" class="md-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    ECE196 IOT Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#intro-to-frontend" class="nav-link">Intro to Frontend</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#fundamentals" class="nav-link">Fundamentals</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#frameworks" class="nav-link">Frameworks</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#intro-to-vuejs" class="nav-link">Intro to Vue.js</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#adding-vue" class="nav-link">Adding Vue</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#one-way-data-binding" class="nav-link">One-Way Data Binding</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#javascript-console" class="nav-link">JavaScript Console</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#two-way-data-binding" class="nav-link">Two-Way Data Binding</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#directives" class="nav-link">Directives</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+      
+      
+      
 
-<h1 id="intro-to-frontend">Intro to Frontend</h1>
+
+  <li class="md-nav__item">
+    <a href="../rpi/" title="Raspberry Pi" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../fire/" title="Firebase" class="md-nav__link">
+      Firebase
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Frontend
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Frontend" class="md-nav__link md-nav__link--active">
+      Frontend
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    Frameworks
+  </a>
+  
+    <nav class="md-nav" aria-label="Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-frameworks" class="md-nav__link">
+    What are Frameworks?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-many-frameworks" class="md-nav__link">
+    So many Frameworks!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-vuejs" class="md-nav__link">
+    Intro to Vue.js
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Vue.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-vue" class="md-nav__link">
+    Adding Vue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-way-data-binding" class="md-nav__link">
+    One-Way Data Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-data-binding" class="md-nav__link">
+    Two-Way Data Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directives" class="md-nav__link">
+    Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    Frameworks
+  </a>
+  
+    <nav class="md-nav" aria-label="Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-frameworks" class="md-nav__link">
+    What are Frameworks?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-many-frameworks" class="md-nav__link">
+    So many Frameworks!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-vuejs" class="md-nav__link">
+    Intro to Vue.js
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Vue.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-vue" class="md-nav__link">
+    Adding Vue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-way-data-binding" class="md-nav__link">
+    One-Way Data Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-way-data-binding" class="md-nav__link">
+    Two-Way Data Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directives" class="md-nav__link">
+    Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="intro-to-frontend">Intro to Frontend</h1>
 <p>The modern World Wide Web is truly a world of chaos and anarchy, with competing powers rising and falling, along with their preferred way of doing things. Brought to you by your favorite web browser!</p>
 <h2 id="fundamentals">Fundamentals</h2>
 <p>The most fundamental concepts of Web Development essentially boil down to these three (3):</p>
@@ -173,7 +490,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="exercise">Exercise</h3>
+<h4 id="exercise">Exercise</h4>
 <p>Starting an HTML document from scratch is fairly straightforward. </p>
 <ol>
 <li>Create a new folder for your project.</li>
@@ -211,7 +528,10 @@
     }, 1000);
 </code></pre>
 <p>And then save the file and refresh the page. Notice the text will now change after one (1) second!</p>
-<p>Note on refreshing: most modern browsers have a "lazy" refresh that doesn't always reload all our changes. To actually refresh we have to perform a "hard" refresh which in Chrome can be done by holding down Shift and refreshing, or right clicking the refresh button.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Most modern browsers have a "lazy" refresh that doesn't always reload all our changes. To actually refresh we have to perform a "hard" refresh which in Chrome can be done by holding down Shift and refreshing, or right clicking the refresh button.</p>
+</div>
 <h2 id="frameworks">Frameworks</h2>
 <p>To bring order to the wild atomized world wrought by HTML, CSS, and JavaScript, various competing powers have attempted to create structure with Web Frameworks.</p>
 <h3 id="what-are-frameworks">What are Frameworks?</h3>
@@ -228,15 +548,18 @@
 <li><strong>Vue.js</strong> - HTML+JavaScript Framework</li>
 <li><strong>Bootstrap</strong> - CSS framework</li>
 </ol>
-<h1 id="intro-to-vuejs">Intro to Vue.js</h1>
+<h2 id="intro-to-vuejs">Intro to Vue.js</h2>
 <p>Vue is one of latest and greatest rising stars of the Frontend Framework scene. Compared to the more popular React or Angular, Vue is relatively easy to get working off the ground, without complicated setup.</p>
-<h2 id="adding-vue">Adding Vue</h2>
+<h3 id="adding-vue">Adding Vue</h3>
 <p>To include the Vue library into our page, we can use this script tag:</p>
 <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"&gt;&lt;/script&gt;
 </code></pre>
-<p>Note: Since the browser loads the DOM in order, we must place this before we write any Javascript code that uses Vue. The best place in our current page is after <code>&lt;body&gt;</code> but before <code>&lt;script&gt;</code>.</p>
-<p>Now if we open Developer Tools in our browser (F12 in Chrome), click the Console tab, we should now see some messages about Vue.</p>
-<p>Anyways, we can create a <code>Vue</code> object called <code>vm</code> (within the <code>script</code> block) like this:</p>
+<p>Since the browser loads the DOM in order, we must place this before we write any Javascript code that uses Vue. The best place in our current page is after <code>&lt;body&gt;</code> but before <code>&lt;script&gt;</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If we open Developer Tools in our browser (F12 in Chrome), click the Console tab, we should now see some messages about Vue to confirm it was loaded successfully.</p>
+</div>
+<p>After that, we can create a <code>Vue</code> object called <code>vm</code> (within the <code>script</code> block) like this:</p>
 <pre><code>    var vm = new Vue({})
 </code></pre>
 <p>Each Vue instance is defined by a dictionary with various fields specifying variables, functions, and special behavior. The ones we'll be using are:</p>
@@ -254,7 +577,7 @@
         methods: {}
     })
 </code></pre>
-<p>Now for our HTML we want to create a new <code>&lt;div&gt;</code> element with <code>id="app"</code> to wrap the content of our page. Then we declare <code>el: "app"</code> in our Vue object. Our code should now look like this:</p>
+<p>For our HTML we want to create a new <code>&lt;div&gt;</code> element with <code>id="app"</code> to wrap the content of our page. Then we declare <code>el: "app"</code> in our Vue object. Our code should now look like this:</p>
 <pre><code>...
 &lt;body&gt;
     &lt;div id="app"&gt;
@@ -274,7 +597,7 @@
 ...
 </code></pre>
 <p>Note: we can remove the JavaScript code from the previous section.</p>
-<h2 id="one-way-data-binding">One-Way Data Binding</h2>
+<h3 id="one-way-data-binding">One-Way Data Binding</h3>
 <p>To witness the full power of Vue, we can set up what's called a data binding:</p>
 <ol>
 <li>Change the text in our <code>&lt;h1&gt;</code> to <code>{{ titleText }}</code>.</li>
@@ -302,17 +625,18 @@
 ...
 </code></pre>
 <p>Now if we refresh the page we should see that Vue changes the <code>titleText</code> into what we specified!</p>
-<h2 id="javascript-console">JavaScript Console</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>Another useful perk of Vue is how easy it is to debug our application with the built-in browser Console. To open the console in Chrome, we can open Developer Tools or press <code>F12</code> and click the Console tab.</p>
 <p>Our data fields are all properties of the Vue object, and since our Vue object is called <code>vm</code>, we can address <code>titleText</code> as <code>vm.titleText</code></p>
-<h3 id="exercise_1">Exercise</h3>
 <ol>
 <li>Try typing <code>vm.titleText</code> into the console. What does it output? is this expected?</li>
 <li>Try typing <code>vm.titleText = 'ECE 196'</code> into the console. Now look at the HTML page. What is the <code>&lt;h1&gt;</code> text now? </li>
 </ol>
+</div>
 <p>One of the most powerful advantages of Vue data binding is how values in the HTML and JavaScript portions of our webpage are seamlessly connected, in real time.</p>
 <p>If we wanted to achieve the same with pure JavaScript, it would not only   take much more time writing and debugging more code, but the complexity would also grow exponentially when we add more stuff to our webpage. </p>
-<h2 id="two-way-data-binding">Two-Way Data Binding</h2>
+<h3 id="two-way-data-binding">Two-Way Data Binding</h3>
 <p>We just saw how to get Vue to put variables into HTML, but we also want to be able to put HTML variables into Vue. One way to do this is with two-way data binding.</p>
 <p>Before we do that, we need to create something in HTML designed to handle user input. One type of common input is the checkbox. We can add three checkboxes to the page like this:</p>
 <pre><code>&lt;div id="app"&gt;
@@ -338,7 +662,10 @@
     }
 },
 </code></pre>
-<p>If we refresh the page, we should see our three checkboxes appear. To verify that everything works we can use the console again:</p>
+<p>If we refresh the page, we should see our three checkboxes appear. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To verify that everything works we can use the console again:</p>
 <ol>
 <li>Tick an arbitrary combination of the boxes on our page</li>
 <li>type <code>vm.color</code> in the browser console </li>
@@ -346,11 +673,12 @@
 <li>click each color field to load the value</li>
 </ol>
 <p>Is this what we'd expect?</p>
+</div>
 <p>To make things really interesting we can reflect the values back onto our HTML page. Under the checkboxes, we can add another <code>&lt;p&gt;</code> like this:</p>
 <pre><code>&lt;p&gt;Selected Values: {{ color }}&lt;/p&gt;
 </code></pre>
 <p>When the boxes are ticked, we can see the dictionary updated automatically on our page!</p>
-<h2 id="directives">Directives</h2>
+<h3 id="directives">Directives</h3>
 <p>Directives are special HTML tag attributes that define behavior in Vue but are otherwise ignored by the browser.</p>
 <p>As you may have noticed in the previous section, we used the <code>v-model</code> directive to tell Vue that we want two-way data binding on our checkbox values.</p>
 <p>There are a multitude of other directives in Vue to accomplish all kinds of tasks, but we will only use a few ones here:</p>
@@ -384,84 +712,72 @@ methods: {
 <li>Two-way data binding on the checkboxes still works.</li>
 <li>Different <code>&lt;p&gt;</code> element is shown if no checkboxes are ticked.</li>
 <li>Clicking the button will run a function that ticks all the checkboxes.</li>
-</ol></div>
-            </div>
-        </div>
+</ol>
+                
+              
+              
+                
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+              
+            </article>
+          </div>
         </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../fire/" title="Firebase" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Firebase
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
     </div>
-</div>
-
-    </body>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
 </html>
