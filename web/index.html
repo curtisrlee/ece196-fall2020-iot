@@ -36,6 +36,12 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
+                            <li class="navitem">
+                                <a href="../rpi/" class="nav-link">Raspberry Pi</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../fire/" class="nav-link">Firebase</a>
+                            </li>
                             <li class="navitem active">
                                 <a href="./" class="nav-link">Frontend</a>
                             </li>
@@ -48,7 +54,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../fire/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -103,6 +109,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#two-way-data-binding" class="nav-link">Two-Way Data Binding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#directives" class="nav-link">Directives</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -328,7 +338,53 @@
     }
 },
 </code></pre>
-<p>Now if we refresh the page, we should see our three checkboxes appear.</p></div>
+<p>If we refresh the page, we should see our three checkboxes appear. To verify that everything works we can use the console again:</p>
+<ol>
+<li>Tick an arbitrary combination of the boxes on our page</li>
+<li>type <code>vm.color</code> in the browser console </li>
+<li>expand the <code>Observer</code> object </li>
+<li>click each color field to load the value</li>
+</ol>
+<p>Is this what we'd expect?</p>
+<p>To make things really interesting we can reflect the values back onto our HTML page. Under the checkboxes, we can add another <code>&lt;p&gt;</code> like this:</p>
+<pre><code>&lt;p&gt;Selected Values: {{ color }}&lt;/p&gt;
+</code></pre>
+<p>When the boxes are ticked, we can see the dictionary updated automatically on our page!</p>
+<h2 id="directives">Directives</h2>
+<p>Directives are special HTML tag attributes that define behavior in Vue but are otherwise ignored by the browser.</p>
+<p>As you may have noticed in the previous section, we used the <code>v-model</code> directive to tell Vue that we want two-way data binding on our checkbox values.</p>
+<p>There are a multitude of other directives in Vue to accomplish all kinds of tasks, but we will only use a few ones here:</p>
+<ul>
+<li><code>v-model</code> - creates two way data-binding</li>
+<li><code>v-if</code> - displays an element only if the condition is true</li>
+<li><code>v-else</code> - compliment for <code>v-if</code></li>
+<li><code>v-on:click</code> or <code>:click</code> - runs a function when the element is clicked</li>
+</ul>
+<p>To see these in action, we can create some more HTML elements with Vue directives. Replace:</p>
+<pre><code>&lt;p&gt;Selected Values: {{ color }}&lt;/p&gt;
+</code></pre>
+<p>with this:</p>
+<pre><code>&lt;button type="button" v-on:click="selectAll()"&gt;Select All&lt;/button&gt;
+&lt;p v-if="color.r || color.g || color.b"&gt;Selected Values: {{ color }} &lt;/p&gt;
+&lt;p v-else&gt;No colors are selected.&lt;/p&gt;
+</code></pre>
+<p>And in our Vue object, add a method called selectAll() like this:</p>
+<pre><code>...
+methods: {
+    selectAll: function() {
+        this.color.r = true;
+        this.color.g = true;
+        this.color.b = true;
+    }
+}
+...
+</code></pre>
+<p>Now when we refresh the page, we should see:</p>
+<ol>
+<li>Two-way data binding on the checkboxes still works.</li>
+<li>Different <code>&lt;p&gt;</code> element is shown if no checkboxes are ticked.</li>
+<li>Clicking the button will run a function that ticks all the checkboxes.</li>
+</ol></div>
             </div>
         </div>
 
