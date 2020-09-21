@@ -347,6 +347,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#intro-to-css" class="md-nav__link">
+    Intro to CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-loading-glitches" class="md-nav__link">
+    Fixing Loading Glitches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-bootstrap" class="md-nav__link">
+    Intro to Bootstrap
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-bootstrap" class="md-nav__link">
+    Adding Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-system" class="md-nav__link">
+    Grid System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    Cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -497,6 +558,67 @@
           <li class="md-nav__item">
   <a href="#writing-data" class="md-nav__link">
     Writing Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-css" class="md-nav__link">
+    Intro to CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-loading-glitches" class="md-nav__link">
+    Fixing Loading Glitches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-bootstrap" class="md-nav__link">
+    Intro to Bootstrap
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-bootstrap" class="md-nav__link">
+    Adding Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-system" class="md-nav__link">
+    Grid System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    Cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
   </a>
   
 </li>
@@ -777,23 +899,23 @@
 <li><code>v-model</code> - creates two way data-binding</li>
 <li><code>v-if</code> - displays an element only if the condition is true</li>
 <li><code>v-else</code> - compliment for <code>v-if</code></li>
-<li><code>v-on:change</code> or <code>:change</code> - runs a function when the element is changed</li>
-<li><code>v-on:click</code> or <code>:click</code> - runs a function when the element is clicked</li>
+<li><code>v-on:change</code> or <code>@change</code> - runs a function when the element is changed</li>
+<li><code>v-on:click</code> or <code>@click</code> - runs a function when the element is clicked</li>
 </ul>
 <p>To see these in action, we can create some more HTML elements with Vue directives. Replace:</p>
 <pre><code>&lt;p&gt;Selected Values: {{ color }}&lt;/p&gt;
 </code></pre>
 <p>with this:</p>
-<pre><code>&lt;button type="button" v-on:click="selectAll()"&gt;Select All&lt;/button&gt;
+<pre><code>&lt;button type="button" v-on:click="selectAll(true)"&gt;Select All&lt;/button&gt;
 &lt;p v-if="color.r || color.g || color.b"&gt;Selected Values: {{ color }} &lt;/p&gt;
 &lt;p v-else&gt;No colors are selected.&lt;/p&gt;
 </code></pre>
-<p>And in our Vue object, add a method called <code>selectAll()</code> like this:</p>
+<p>And in our Vue object, add a method called <code>selectAll()</code> that takes a parameter <code>value</code> like this:</p>
 <pre><code>methods: {
-    selectAll: function() {
-        this.color.r = true;
-        this.color.g = true;
-        this.color.b = true;
+    selectAll: function(value) {
+        this.color.r = value;
+        this.color.g = value;
+        this.color.b = value;
     }
 }
 </code></pre>
@@ -808,7 +930,7 @@
 <li>Clicking the button will run a function that ticks all the checkboxes.</li>
 </ol>
 <h2 id="connecting-to-firebase">Connecting to Firebase</h2>
-<p>Note: this sections assumes we already have a Firebase app set up.</p>
+<p>This sections assumes we already have a Firebase app set up.</p>
 <h3 id="adding-firebase">Adding Firebase</h3>
 <p>To include the Firebase Core and Realtime Database libraries on our webpage, we can add the following lines similar to including the Vue library:</p>
 <pre><code>&lt;script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"&gt;&lt;/script&gt;
@@ -874,10 +996,140 @@ var vm = new Vue({
 &lt;/form&gt;
 </code></pre>
 <p>Similarily, we want to add an <code>v-on:click</code> directive to the button as well:</p>
-<pre><code>&lt;button type="button" v-on:click="selectAll(); updateColor()"&gt;Select All&lt;/button&gt;
+<pre><code>&lt;button type="button" v-on:click="selectAll(true); updateColor()"&gt;Select All&lt;/button&gt;
 </code></pre>
 <p>Every time Vue detects a change in the <code>&lt;form&gt;</code> containing all the checkboxes, it will run the function that submits the changed <code>color</code> dictionary.</p>
 <p>If we tick/untick any of the checkboxes, we should also be able to now see the values get updated in Firebase Dashboard as well!</p>
+<h2 id="intro-to-css">Intro to CSS</h2>
+<p>There are two main ways to fine-tune the way our HTML elements look.</p>
+<ol>
+<li>
+<p>The <code>class</code> attribute</p>
+<ul>
+<li>By assigning our element to a <code>class</code> value defined in <code>&lt;style&gt;</code>.</li>
+<li>
+<p>We already have seen some of this in action. If we change our <code>&lt;style&gt;</code> block to this:</p>
+<pre><code>&lt;style&gt;
+    body {
+        background-color: lightblue;
+    }
+&lt;/style&gt;
+</code></pre>
+<p>We see that:</p>
+<ul>
+<li>The background color is changed to <code>lightblue</code></li>
+<li>Everything reverts back to being left aligned, which is the default.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The <code>style</code> attribute</p>
+<ul>
+<li>Can also inject some CSS properties directly into the tag.</li>
+<li>For very minor finer-tuning.</li>
+<li>For example this will center all the text inside the <code>&lt;div&gt;</code>:<pre><code>&lt;div style="text-align: center;"&gt;
+    I am centered text.
+&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="fixing-loading-glitches">Fixing Loading Glitches</h3>
+<p>When we refresh the page, sometimes we can still see <code>{{ }}</code> in the HTML before Vue loads. We can actually use a special Vue directive <code>v-cloak</code> along with some simple CSS to fix this.</p>
+<p>Add this to the style block:</p>
+<pre><code>[v-cloak] {
+    display: none;
+}
+</code></pre>
+<p>And also add the directive onto the main <code>&lt;div&gt;</code> of the app:</p>
+<pre><code>&lt;div id="app" v-cloak&gt;
+</code></pre>
+<p>Now the page will no longer flash those <code>{{ }}</code> before Vue loads.</p>
+<h2 id="intro-to-bootstrap">Intro to Bootstrap</h2>
+<p>At this point you may have noticed our website overall still looks pretty unattractive. We could write more CSS from scratch to make our website look exactly how we want, but in most cases that's a waste of time. Instead, we can use another framework for CSS called Bootstrap. </p>
+<p>Bootstrap basically gives us a complete CSS stylesheet with designs for all the common UI elements to use in our app, including page layouts, fonts, buttons, textboxes, etc.</p>
+<h3 id="adding-bootstrap">Adding Bootstrap</h3>
+<p>Similarly to including JavaScript, we can include CSS stylesheets before our existing <code>&lt;style&gt;</code> element like this:</p>
+<pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"&gt;
+</code></pre>
+<p>When we refresh the page, we will immediately see the default font changed to a sans-serif type, the default for Bootstrap.</p>
+<p>To assign HTML tags style definitions from CSS, we add <code>class</code> attributes.</p>
+<h3 id="grid-system">Grid System</h3>
+<p>Bootstrap's approach to page layout is a dynamic grid system. We can utilize this to improve the layout of the page. Here is an example of a basic 3 column layout:</p>
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>One possible implementation on our page:</p>
+<p><img alt="layouts.png" src="../layouts.png" /></p>
+<h3 id="cards">Cards</h3>
+<p>Cards are an all-purpose way to hold content. Different types of content can also be mix and matched in a card. Here is an example of a basic card:</p>
+<pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
+        &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Device: Raspberry Pi&lt;/h5&gt;
+            &lt;p class="card-text"&gt;The Raspberry Pi is awesome!&lt;/p&gt;
+            &lt;a href="https://www.raspberrypi.org/" class="btn btn-primary"&gt;Learn More&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Combining cards with layouts we could create this: </p>
+<p><img alt="cards.png" src="../cards.png" /></p>
+<h3 id="tables">Tables</h3>
+<p>To improve our display of the "Selected Values", we can convert it into a Bootstrap table. Creating a table can first be done with HTML tags like this:</p>
+<pre><code>&lt;table class="table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Type&lt;/th&gt;
+            &lt;th scope="col"&gt;Color&lt;/th&gt;
+            &lt;th scope="col"&gt;On&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Red&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.r" &gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Green&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.g" &gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Blue&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.b" &gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
                 
               
               
