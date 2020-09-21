@@ -425,14 +425,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#final-adjustments" class="md-nav__link">
-    Final Adjustments
+  <a href="#final-touches" class="md-nav__link">
+    Final Touches
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
   
 </li>
       
@@ -673,14 +680,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#final-adjustments" class="md-nav__link">
-    Final Adjustments
+  <a href="#final-touches" class="md-nav__link">
+    Final Touches
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
   
 </li>
       
@@ -1187,7 +1201,7 @@ var vm = new Vue({
             &lt;/td&gt; 
             &lt;td&gt;Red&lt;/td&gt; 
             &lt;td&gt;
-                &lt;input type="checkbox" v-model="color.r" &gt;
+                &lt;input type="checkbox" v-model="color.r" v-on:change="updateColor()"&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
@@ -1196,7 +1210,7 @@ var vm = new Vue({
             &lt;/td&gt; 
             &lt;td&gt;Green&lt;/td&gt; 
             &lt;td&gt;
-                &lt;input type="checkbox" v-model="color.g" &gt;
+                &lt;input type="checkbox" v-model="color.g" v-on:change="updateColor()"&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
@@ -1205,7 +1219,7 @@ var vm = new Vue({
             &lt;/td&gt; 
             &lt;td&gt;Blue&lt;/td&gt; 
             &lt;td&gt;
-                &lt;input type="checkbox" v-model="color.b" &gt;
+                &lt;input type="checkbox" v-model="color.b" v-on:change="updateColor()"&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -1226,8 +1240,8 @@ var vm = new Vue({
 <h3 id="buttons">Buttons</h3>
 <p>Bootstrap also give us templates for buttons, as well as "button groups" which can combine adjacent buttons into a single bar.</p>
 <pre><code>&lt;div class="btn-group" role="group"&gt;
-    &lt;button v-on:click="selectAll(true)" type="button" class="btn btn-secondary"&gt;Select All&lt;/button&gt;
-    &lt;button v-on:click="selectAll(false)" type="button" class="btn btn-secondary"&gt;Deselect All&lt;/button&gt;
+    &lt;button v-on:click="selectAll(true); updateColor();" type="button" class="btn btn-secondary"&gt;Select All&lt;/button&gt;
+    &lt;button v-on:click="selectAll(false); updateColor();" type="button" class="btn btn-secondary"&gt;Deselect All&lt;/button&gt;
 &lt;/div&gt;
 </code></pre>
 <h3 id="lists">Lists</h3>
@@ -1237,22 +1251,45 @@ var vm = new Vue({
     &lt;li class="list-group-item"&gt;Humidity: 50%&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
-<h3 id="final-adjustments">Final Adjustments</h3>
+<h3 id="final-touches">Final Touches</h3>
 <p>To make all the cards the same height we can add <code>d-flex</code> to each column <code>&lt;div&gt;</code>, and then add <code>w-100</code> to each card <code>&lt;div&gt;</code> so that the fill the column properly, like this:</p>
-<pre><code>                ...
-                &lt;div class="col-sm d-flex"&gt;
-                    &lt;div class="card w-100"&gt;
-                        ...
+<pre><code>    ...
+    &lt;div class="col-sm d-flex"&gt;
+        &lt;div class="card w-100"&gt;
+            ...
 </code></pre>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Fine tuning layout specifics can get very time consuming so we won't go over too many tricky details.</p>
 </div>
-<p>Also, its a good idea to associate color with each entry on the LED table with some inline <code>style</code> attributes:</p>
+<p>Also replacing the checkboxes with toggle switches are a nice touch:</p>
+<pre><code>&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.r" type="checkbox" class="custom-control-input" id="color-r"&gt;
+    &lt;label class="custom-control-label" for="color-r"&gt;&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.g" type="checkbox" class="custom-control-input" id="color-g"&gt;
+    &lt;label class="custom-control-label" for="color-g"&gt;&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.b" type="checkbox" class="custom-control-input" id="color-b"&gt;
+    &lt;label class="custom-control-label" for="color-b"&gt;&lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Finally, its a good idea to associate color with each entry on the LED table with some inline <code>style</code> attributes:</p>
 <pre><code>style="background-color: lightcoral;"
+
 style="background-color: lightgreen;"
+
 style="background-color: lightskyblue;"
 </code></pre>
+<p>Here is what the final result can look like:</p>
+<p><img alt="finished-website.png" src="../finished-website.png" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The content in this guide is by no means all-inclusive. In fact, we barely scratched the surface of what these frameworks have to offer.</p>
+<p>For more features and help it's definitely worth looking at the documentation these products.</p>
                 
               
               
