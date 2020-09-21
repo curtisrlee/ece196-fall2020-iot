@@ -328,6 +328,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reading-data" class="md-nav__link">
+    Reading Data
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -469,6 +476,13 @@
           <li class="md-nav__item">
   <a href="#adding-firebase" class="md-nav__link">
     Adding Firebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-data" class="md-nav__link">
+    Reading Data
   </a>
   
 </li>
@@ -768,6 +782,10 @@
     }
 }
 </code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Since <code>color</code> is a field of <code>vm</code>, and the function runs within <code>vm</code>'s scope, we reference <code>color</code> as <code>this.color</code></p>
+</div>
 <p>Now when we refresh the page, we should see:</p>
 <ol>
 <li>Two-way data binding on the checkboxes still works.</li>
@@ -796,6 +814,30 @@ var vm = new Vue({
 <p class="admonition-title">Info</p>
 <p>It's possible to put the Firebase objects within our Vue object, but for our purposes it's easier to leave them seperate.</p>
 </div>
+<h3 id="reading-data">Reading Data</h3>
+<p>To read color data from Firebase, lets first add a new method in our Vue called <code>setupColorListener()</code>. This will create a listener in the background of our web app that listens for any changes in our database entry, and runs a function every time Firebase sends us these changes.</p>
+<pre><code>setupColorListener: function() {
+    var colorDataRef = database.ref('path/to/ref');
+    colorDataRef.on('value', function(snapshot) {
+        vm.color = snapshot.val();
+    }); 
+},
+</code></pre>
+<p>But note that so far our Firebase data is structured like this:</p>
+<p><img alt="alt text" src="../firebase-struct.png" title="Logo Title Text 1" /></p>
+<p>Therefore, if we want the color data, our reference path should be changed to <code>'data/color'</code>, which gives us:</p>
+<pre><code>var colorDataRef = database.ref('data/color');
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The callback function explicitly references <code>color</code> as <code>vm.color</code> and not <code>this.color</code>. This is because the callback is actually run within the Firebase object, which is outside the scope of <code>vm</code>.</p>
+</div>
+<p>And we want the function to be run as soon as the page loads. So it makes sense to call the function under our <code>created</code> initialization function:</p>
+<pre><code>created: function() {
+    this.setupColorListener();
+},
+</code></pre>
+<p>In Firebase Dashboard, if we now change the values within <code>color</code>, we should now see them update the checkboxes on our page, in real time!</p>
                 
               
               
