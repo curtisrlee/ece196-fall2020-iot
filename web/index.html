@@ -227,8 +227,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise" class="md-nav__link">
-    Exercise
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serving-the-website" class="md-nav__link">
+    Serving the Website
   </a>
   
 </li>
@@ -297,6 +304,26 @@
           <li class="md-nav__item">
   <a href="#directives" class="md-nav__link">
     Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-firebase" class="md-nav__link">
+    Connecting to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-firebase" class="md-nav__link">
+    Adding Firebase
   </a>
   
 </li>
@@ -345,8 +372,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise" class="md-nav__link">
-    Exercise
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serving-the-website" class="md-nav__link">
+    Serving the Website
   </a>
   
 </li>
@@ -415,6 +449,26 @@
           <li class="md-nav__item">
   <a href="#directives" class="md-nav__link">
     Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-firebase" class="md-nav__link">
+    Connecting to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-firebase" class="md-nav__link">
+    Adding Firebase
   </a>
   
 </li>
@@ -490,7 +544,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="exercise">Exercise</h4>
+<h4 id="getting-started">Getting Started</h4>
 <p>Starting an HTML document from scratch is fairly straightforward. </p>
 <ol>
 <li>Create a new folder for your project.</li>
@@ -517,21 +571,30 @@
 </code></pre>
 </li>
 </ol>
+<p>We can now open the file with a web browser to see the results.</p>
 <p>Notice:</p>
 <ul>
 <li>The background of the page is colored beige, and the text is centered on the page. This is consistent with the CSS styling we specified.</li>
 <li>The big <code>&lt;h1&gt;</code> text shows "Hello JavaScript", which is not the original text, but rather set by our JavaScript script. If we remove that JavaScript snippet from our page, this will no longer happen.</li>
 </ul>
 <p>We can also create more interesting behavior by changing the JavaScript. Try replacing the code in the <code>&lt;script&gt;</code> tag with this:</p>
-<pre><code>    setTimeout(function(){ 
-        document.getElementById("title").innerHTML = "Hello JavaScript!";
-    }, 1000);
+<pre><code>setTimeout(function(){ 
+    document.getElementById("title").innerHTML = "Hello JavaScript!";
+}, 1000);
 </code></pre>
 <p>And then save the file and refresh the page. Notice the text will now change after one (1) second!</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Most modern browsers have a "lazy" refresh that doesn't always reload all our changes. To actually refresh we have to perform a "hard" refresh which in Chrome can be done by holding down Shift and refreshing, or right clicking the refresh button.</p>
 </div>
+<h3 id="serving-the-website">Serving the Website</h3>
+<p>While opening the file as .html in the browser works for now, in later steps it will not be sufficient. We will need a proper HTTP server to serve the webpage. Luckily, we can use Python's built-in server:</p>
+<ol>
+<li>Open a terminal in the folder with the index.html file.</li>
+<li>Run <code>python -m http.server</code></li>
+<li>In the browser, go to <a href="http://localhost:8000">localhost:8000</a></li>
+</ol>
+<p>The webpage should appear as before, but from a HTTP URL (of your own computer).</p>
 <h2 id="frameworks">Frameworks</h2>
 <p>To bring order to the wild atomized world wrought by HTML, CSS, and JavaScript, various competing powers have attempted to create structure with Web Frameworks.</p>
 <h3 id="what-are-frameworks">What are Frameworks?</h3>
@@ -552,7 +615,7 @@
 <p>Vue is one of latest and greatest rising stars of the Frontend Framework scene. Compared to the more popular React or Angular, Vue is relatively easy to get working off the ground, without complicated setup.</p>
 <h3 id="adding-vue">Adding Vue</h3>
 <p>To include the Vue library into our page, we can use this script tag:</p>
-<pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"&gt;&lt;/script&gt;
 </code></pre>
 <p>Since the browser loads the DOM in order, we must place this before we write any Javascript code that uses Vue. The best place in our current page is after <code>&lt;body&gt;</code> but before <code>&lt;script&gt;</code>.</p>
 <div class="admonition tip">
@@ -696,16 +759,14 @@
 &lt;p v-if="color.r || color.g || color.b"&gt;Selected Values: {{ color }} &lt;/p&gt;
 &lt;p v-else&gt;No colors are selected.&lt;/p&gt;
 </code></pre>
-<p>And in our Vue object, add a method called selectAll() like this:</p>
-<pre><code>...
-methods: {
+<p>And in our Vue object, add a method called <code>selectAll()</code> like this:</p>
+<pre><code>methods: {
     selectAll: function() {
         this.color.r = true;
         this.color.g = true;
         this.color.b = true;
     }
 }
-...
 </code></pre>
 <p>Now when we refresh the page, we should see:</p>
 <ol>
@@ -713,6 +774,28 @@ methods: {
 <li>Different <code>&lt;p&gt;</code> element is shown if no checkboxes are ticked.</li>
 <li>Clicking the button will run a function that ticks all the checkboxes.</li>
 </ol>
+<h2 id="connecting-to-firebase">Connecting to Firebase</h2>
+<p>Note: this sections assumes we already have a Firebase app set up.</p>
+<h3 id="adding-firebase">Adding Firebase</h3>
+<p>To include the Firebase Core and Realtime Database libraries on our webpage, we can add the following lines similar to including the Vue library:</p>
+<pre><code>&lt;script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>Now outside and before our <code>vm = new Vue()</code> object, we need to initialize our objects called <code>firebase</code> and <code>database</code>:</p>
+<pre><code>var firebaseConfig = {
+    ...
+};
+firebase.initializeApp(firebaseConfig);
+database = firebase.database()
+
+var vm = new Vue({
+    ...
+</code></pre>
+<p>Replacing <code>firebaseConfig</code> with the one given in our Firebase App dashboard.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It's possible to put the Firebase objects within our Vue object, but for our purposes it's easier to leave them seperate.</p>
+</div>
                 
               
               
