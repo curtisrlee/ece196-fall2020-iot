@@ -16,7 +16,7 @@
     
     
       
-        <title>Firebase - ECE196 IOT Documentation</title>
+        <title>Backend - ECE196 IOT Documentation</title>
       
     
     
@@ -50,7 +50,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intro-to-firebase" class="md-skip">
+        <a href="#intro-to-backend-development" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Firebase
+              Backend
             
           </span>
         </div>
@@ -184,9 +184,78 @@
       
     
     
-    <a href="./" title="Firebase" class="md-nav__link md-nav__link--active">
-      Firebase
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Backend
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Backend" class="md-nav__link md-nav__link--active">
+      Backend
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-full-stack" class="md-nav__link">
+    What is Full Stack?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backend" class="md-nav__link">
+    What is Backend?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firebase" class="md-nav__link">
+    Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -220,6 +289,61 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-full-stack" class="md-nav__link">
+    What is Full Stack?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backend" class="md-nav__link">
+    What is Backend?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firebase" class="md-nav__link">
+    Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -234,7 +358,40 @@
                   
                 
                 
-                <h1 id="intro-to-firebase">Intro to Firebase</h1>
+                <h1 id="intro-to-backend-development">Intro to Backend Development</h1>
+<p><em>Written by Curtis Lee</em></p>
+<h2 id="fundamentals">Fundamentals</h2>
+<h3 id="what-is-full-stack">What is Full Stack?</h3>
+<p>It boils down to three (3) concepts:</p>
+<ol>
+<li><strong>Frontend</strong> software that the user sees and interacts with.</li>
+<li><strong>Backend</strong> software that can handle specific requests and dynamically sends/recieves information to/from the user.</li>
+<li><strong>Database</strong> that stores pretty much all information our app uses.</li>
+</ol>
+<p>There are endless configurations depending on the application. Sometimes, these components may be combined or further seperated to varying degrees. 
+Regardless, all components must work together to produce a web app. </p>
+<p>Imagine a trinity of cards: <strong>Frontend</strong>, <strong>Backend</strong>, and <strong>Database</strong>. A developer that holds all three cards is said to have the "<strong>Full Stack</strong>", and thus can build a complete web app.</p>
+<h3 id="what-is-backend">What is Backend?</h3>
+<p>In traditional web development, backend software runs the "business logic" of our app. For example, a basic workflow may be like this:</p>
+<ol>
+<li>The user fills out a login form on our app.</li>
+<li>The user's browser sends a login request + the credentials to the backend server.</li>
+<li>The backend recieves this information.</li>
+<li>The backend queries the database to see if the user exists.</li>
+<li>If the user exists, see if username &amp; password match.</li>
+<li>If everything is correct, send our content back to the user. Otherwise, send an error message.</li>
+</ol>
+<p>Setting up a backend server is usually not easy. We would need to have extensive knowledge of setting up servers, networking, operating systems, and software. And that's before we even write any code, which may also require mastering multiple programming languages!</p>
+<p>This is not feasible without the proper expertise and lots of time. So we will not be doing that. </p>
+<p>Instead, we will leverage <strong>Cloud Services</strong> that do the hard work for us, so we can better focus on our ideas.</p>
+<h2 id="firebase">Firebase</h2>
+<p>Firebase is Google's solution to the problem. Firebase has reduced the entire <strong>Backend + Database</strong> stack into simpler services that we can rent out. Essentially, we are outsourcing all the hard technical work to Google.</p>
+<h3 id="slides">Slides</h3>
+<p><object data="./Database.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="./Database.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./Database.pdf">Download PDF</a>.</p>
+    </embed>
+</object></p>
 <p><object data="./Database.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="./Database.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./Database.pdf">Download PDF</a>.</p>
