@@ -16,7 +16,7 @@
     
     
       
-        <title>Scrap - ECE196 IOT Documentation</title>
+        <title>Security - ECE196 IOT Documentation</title>
       
     
     
@@ -50,7 +50,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#buttons" class="md-skip">
+        <a href="#intro-to-security" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Scrap
+              Security
             
           </span>
         </div>
@@ -198,11 +198,62 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../secure/" title="Security" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Security
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Security" class="md-nav__link md-nav__link--active">
       Security
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-sense" class="md-nav__link">
+    Common Sense
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Sense">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-security" class="md-nav__link">
+    Physical Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -220,6 +271,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -228,9 +281,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#buttons" class="md-nav__link">
-    Buttons
+  <a href="#common-sense" class="md-nav__link">
+    Common Sense
   </a>
+  
+    <nav class="md-nav" aria-label="Common Sense">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-security" class="md-nav__link">
+    Physical Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -250,41 +316,9 @@
                   
                 
                 
-                  <h1>Scrap</h1>
-                
-                <h3 id="buttons">Buttons</h3>
-<p>Now to see some Bootstrap in action, we first can style our checkboxes. Remove the "Select All" button and replace the entire <code>&lt;form&gt;</code> with this:</p>
-<pre><code>&lt;form v-on:change="updateColor()"&gt;
-    &lt;div class="btn-group btn-group-toggle" data-toggle="buttons"&gt;
-        &lt;label class="btn btn-secondary" v-bind:class="{active: color.r}"&gt;
-            &lt;input type="checkbox" v-model="color.r" &gt; Red
-        &lt;/label&gt;
-        &lt;label class="btn btn-secondary" v-bind:class="{active: color.g}"&gt;
-            &lt;input type="checkbox" v-model="color.g"&gt; Green
-        &lt;/label&gt;
-        &lt;label class="btn btn-secondary" v-bind:class="{active: color.b}"&gt;
-            &lt;input type="checkbox" v-model="color.b"&gt; Blue
-        &lt;/label&gt;
-        &lt;button v-if="color.r &amp;&amp; color.g &amp;&amp; color.b" class="btn btn-secondary" type="button" v-on:click="selectAll(false); updateColor()"&gt;Deselect All&lt;/button&gt;
-        &lt;button v-else class="btn btn-secondary" type="button" v-on:click="selectAll(true); updateColor()"&gt;Select All&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
-<p>Refresh the page and we see a few new things are going on here:</p>
-<ol>
-<li>The buttons are wrapped in a new div of <code>class="btn-group btn-group-toggle"</code>. This is actually two classes:<ul>
-<li><code>btn-group</code> turns the buttons into a single bar</li>
-<li><code>btn-group-toggle</code> replaces checkboxes with toggle buttons</li>
-</ul>
-</li>
-<li>Each label gained 3 new classes:<ul>
-<li><code>btn</code> makes it a button shape</li>
-<li><code>btn-secondary</code> makes it the secondary color</li>
-<li><code>v-bind:class="{active: color.r}"</code> adds the <code>active</code> class depending on whether the value is <code>true</code>. This will make the button look darker when it is checked.</li>
-</ul>
-</li>
-<li>We also added a Deselect All button. Not entirely related, but allows us to see the transitions better.</li>
-</ol>
+                <h1 id="intro-to-security">Intro to Security</h1>
+<h2 id="common-sense">Common Sense</h2>
+<h3 id="physical-security">Physical Security</h3>
                 
               
               
@@ -299,6 +333,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../web/" title="Frontend" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Frontend
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

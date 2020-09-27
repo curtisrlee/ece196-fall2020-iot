@@ -50,7 +50,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raspberry-pi" class="md-skip">
+        <a href="#intro-to-raspberry-pi" class="md-skip">
           Skip to content
         </a>
       
@@ -195,6 +195,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-raspberry-pi" class="md-nav__link">
+    What is Raspberry Pi?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raspberry-pi-setup" class="md-nav__link">
     Raspberry Pi Setup
   </a>
@@ -250,22 +257,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#intro-to-raspberry-pi" class="md-nav__link">
-    Intro to Raspberry Pi
-  </a>
-  
-    <nav class="md-nav" aria-label="Intro to Raspberry Pi">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#slides" class="md-nav__link">
     Slides
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -300,6 +294,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../secure/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -322,6 +328,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-raspberry-pi" class="md-nav__link">
+    What is Raspberry Pi?
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#raspberry-pi-setup" class="md-nav__link">
@@ -379,22 +392,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#intro-to-raspberry-pi" class="md-nav__link">
-    Intro to Raspberry Pi
-  </a>
-  
-    <nav class="md-nav" aria-label="Intro to Raspberry Pi">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#slides" class="md-nav__link">
     Slides
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -414,19 +414,33 @@
                   
                 
                 
-                <h1 id="raspberry-pi">Raspberry Pi</h1>
-<p><em>Originally written by Ravi Patel</em></p>
+                <h1 id="intro-to-raspberry-pi">Intro to Raspberry Pi</h1>
+<p><em>Originally written by Ravi Patel. Updated by Curtis Lee.</em></p>
+<h2 id="what-is-raspberry-pi">What is Raspberry Pi?</h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>The Raspberry Pi is a low cost, credit-card sized computer.</p>
+</div>
+<ul>
+<li>Raspberry Pi is a <a href="https://www.raspberrypi.org/products/">product line</a> of single-board computers aimed at hobbyists and students.</li>
+<li>Small form factor, low cost, and ease-of-use</li>
+<li>CPU is ARM based, similar to those found in smartphones.</li>
+<li>Has USB, HDMI and network outputs like other computers. </li>
+<li>but also GPIOs like a microcontroller.</li>
+</ul>
+<p>All these characteristics means it's suitable for a wide range of embedded uses!</p>
+<p><img alt="Raspberry Pi" src="images/raspberry_pi_3_model_b_plus_gpio-1024x1024.jpg" /></p>
 <h2 id="raspberry-pi-setup">Raspberry Pi Setup</h2>
 <h3 id="hardware-checklist">Hardware Checklist</h3>
-<ul>
+<ol>
 <li>Raspberry Pi</li>
-<li>5V, 2.5A Micro USB Power Supply</li>
+<li>5V, 2.5A Micro USB Power Supply (for Pi)</li>
 <li>HDMI Monitor</li>
-<li>12V, 200 mA Power Supply</li>
+<li>12V, 200 mA Power Supply (for Monitor)</li>
 <li>MicroSD Card with NOOBS preloaded</li>
 <li>Keyboard</li>
 <li>HDMI Cable</li>
-</ul>
+</ol>
 <p><img alt="image" src="images/image7.jpg" /></p>
 <h3 id="hardware-setup">Hardware Setup</h3>
 <ol>
@@ -495,13 +509,8 @@ sudo apt-get upgrade
 </ol>
 <h3 id="optional-downloads">Optional Downloads</h3>
 <p>To use VNC, <a href="https://www.realvnc.com/en/connect/download/viewer/">download VNC Viewer</a> on your computer. </p>
-<h2 id="intro-to-raspberry-pi">Intro to Raspberry Pi</h2>
-<h3 id="slides">Slides</h3>
-<p><object data="./Intro to RPi.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="./Intro to RPi.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./Intro to RPi.pdf">Download PDF</a>.</p>
-    </embed>
-</object></p>
+<h2 id="slides">Slides</h2>
+<p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSq1mC40Q7Eu7uXr-sOdkioqP7HsvfAA9rTIQq63MsaLt0Pw3BHyRLQ1Y6hXH5TKEopF2Kpw3OnC3VX/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
                 
               
               
