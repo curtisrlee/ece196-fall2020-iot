@@ -1,0 +1,539 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
+    
+    
+      
+        <title>Bootstrap - ECE196 IOT Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bootstrap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="ECE196 IOT Documentation" class="md-header-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            ECE196 IOT Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Bootstrap
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ECE196 IOT Documentation" class="md-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    ECE196 IOT Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../rpi/" title="Raspberry Pi" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../fire/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../secure/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-bootstrap" class="md-nav__link">
+    Intro to Bootstrap
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-bootstrap" class="md-nav__link">
+    Adding Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-system" class="md-nav__link">
+    Grid System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#margins" class="md-nav__link">
+    Margins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    Cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-touches" class="md-nav__link">
+    Final Touches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="bootstrap">Bootstrap</h1>
+<h2 id="intro-to-bootstrap">Intro to Bootstrap</h2>
+<p>At this point you may have noticed our website overall still looks pretty unattractive. We could write more CSS from scratch to make our website look exactly how we want, but in most cases that's a waste of time. Instead, we can use another framework for CSS called Bootstrap. </p>
+<p>Bootstrap basically gives us a complete CSS stylesheet with designs for all the common UI elements to use in our app, including page layouts, fonts, buttons, textboxes, etc.</p>
+<div class="admonition info">
+<p class="admonition-title">Read More</p>
+<p>Here we only briefly explore a small feature set of Bootstrap. </p>
+<p>It is recommended to browse the <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">documentation</a> to see all it has to offer.</p>
+</div>
+<h3 id="adding-bootstrap">Adding Bootstrap</h3>
+<p>Similarly to including JavaScript, we can include CSS stylesheets before our existing <code>&lt;style&gt;</code> element like this:</p>
+<pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"&gt;
+</code></pre>
+<p>When we refresh the page, we will immediately see the default font changed to a sans-serif type, the default for Bootstrap.</p>
+<p>To assign HTML tags style definitions from CSS, we add <code>class</code> attributes.</p>
+<h3 id="grid-system">Grid System</h3>
+<p>Bootstrap's approach to page layout is a dynamic grid system. We can utilize this to improve the layout of the page. Here is an example of a basic 3 column layout:</p>
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="col-sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>One possible implementation on our page:</p>
+<p><img alt="layouts.png" src="../layouts.png" /></p>
+<h3 id="margins">Margins</h3>
+<p>Margins are useful to put set amounts of space between different elements.</p>
+<p>In Bootstrap, margins can be specified with <code>class</code> attributes with two letters and a number like this:</p>
+<ul>
+<li><code>class="mt-5"</code> puts a margin on top of size 5</li>
+<li><code>class="ml-2"</code> puts margin on the left of size 2</li>
+</ul>
+<p>They can also be combined:</p>
+<ul>
+<li><code>class="mt-5 mb-5"</code> will put a margin on both top and bottom of size 5</li>
+</ul>
+<p>We can also have margin on all sides:</p>
+<ul>
+<li><code>class="m-5"</code> will put a margin on all sides of size 5</li>
+</ul>
+<p>We can wrap our page title in a 1x1 container and give it some margin from the top of the page like this:</p>
+<pre><code>&lt;div class="container mt-5"&gt; 
+    &lt;div class="row"&gt;
+            &lt;div class="col-lg" style="text-align: center;"&gt;
+            &lt;h1 id="title"&gt;{{ titleText }}&lt;/h2&gt;
+            &lt;p&gt;I am a paragraph of content!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="cards">Cards</h3>
+<p>Cards are an all-purpose way to hold content. Different types of content can also be mix and matched in a card. Here is an example of a basic card:</p>
+<pre><code>&lt;div class="card"&gt;
+    &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
+        &lt;img src="pi.jpg" class="card-img-top" alt="pi.jpg"&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Device: Raspberry Pi&lt;/h5&gt;
+            &lt;p class="card-text"&gt;The Raspberry Pi is awesome!&lt;/p&gt;
+            &lt;a href="https://www.raspberrypi.org/" class="btn btn-primary"&gt;Learn More&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Combining cards with layouts we could create this: </p>
+<p><img alt="cards.png" src="../cards.png" /></p>
+<h3 id="tables">Tables</h3>
+<p>To improve our display of the "Selected Values", we can convert it into a Bootstrap table. Creating a table can first be done with HTML tags like this:</p>
+<pre><code>&lt;table class="table"&gt;
+    &lt;thead class=".thead-light"&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Type&lt;/th&gt;
+            &lt;th scope="col"&gt;Color&lt;/th&gt;
+            &lt;th scope="col"&gt;On&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Red&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.r" v-on:change="updateColor()"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Green&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.g" v-on:change="updateColor()"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;img class="icon" src="led.png" alt="led"&gt;
+            &lt;/td&gt; 
+            &lt;td&gt;Blue&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;input type="checkbox" v-model="color.b" v-on:change="updateColor()"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Lists or tabular data of large or arbitrary sizes should be generated using the <code>v-for</code> directive (akin to a <code>for</code> loop), but since we aren't using any we won't go over it in this course.</p>
+</div>
+<p>Also, to get the icons to display properly, add this class to our custom <code>&lt;style&gt;</code> block:</p>
+<pre><code>.icon {
+    width: 2em;
+    height: 2em;
+}
+</code></pre>
+<p>Adding the table to one of the cards shown previously could look like this:</p>
+<p><img alt="table.png" src="../table.png" /></p>
+<h3 id="buttons">Buttons</h3>
+<p>Bootstrap also give us templates for buttons, as well as "button groups" which can combine adjacent buttons into a single bar.</p>
+<pre><code>&lt;div class="btn-group" role="group"&gt;
+    &lt;button v-on:click="selectAll(true); updateColor();" type="button" class="btn btn-secondary"&gt;Select All&lt;/button&gt;
+    &lt;button v-on:click="selectAll(false); updateColor();" type="button" class="btn btn-secondary"&gt;Deselect All&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="lists">Lists</h3>
+<p>We can use Bootstrap List Groups on top of an HTML list to make our sensor data card look nice.</p>
+<pre><code>&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item"&gt;Temperature: 40C &lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Humidity: 50%&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="final-touches">Final Touches</h3>
+<p>To make all the cards the same height we can add <code>d-flex</code> to each column <code>&lt;div&gt;</code>, and then add <code>w-100</code> to each card <code>&lt;div&gt;</code> so that the fill the column properly, like this:</p>
+<pre><code>    ...
+    &lt;div class="col-sm d-flex"&gt;
+        &lt;div class="card w-100"&gt;
+            ...
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Fine tuning layout specifics can get very time consuming so we won't go over too many tricky details.</p>
+</div>
+<p>Also replacing the checkboxes with toggle switches are a nice touch:</p>
+<pre><code>&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.r" type="checkbox" class="custom-control-input" id="color-r"&gt;
+    &lt;label class="custom-control-label" for="color-r"&gt;&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.g" type="checkbox" class="custom-control-input" id="color-g"&gt;
+    &lt;label class="custom-control-label" for="color-g"&gt;&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div v-on:change="updateColor()" class="custom-control custom-switch"&gt;
+    &lt;input v-model="color.b" type="checkbox" class="custom-control-input" id="color-b"&gt;
+    &lt;label class="custom-control-label" for="color-b"&gt;&lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Finally, its a good idea to associate color with each entry on the LED table with some inline <code>style</code> attributes:</p>
+<pre><code>style="background-color: lightcoral;"
+
+style="background-color: lightgreen;"
+
+style="background-color: lightskyblue;"
+</code></pre>
+<p>Here is what the final result can look like:</p>
+<p><img alt="finished-website.png" src="../finished-website.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

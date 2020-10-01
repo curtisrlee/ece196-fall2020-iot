@@ -231,17 +231,72 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-sense" class="md-nav__link">
-    Common Sense
+  <a href="#firebase-authentication" class="md-nav__link">
+    Firebase Authentication
   </a>
   
-    <nav class="md-nav" aria-label="Common Sense">
+    <nav class="md-nav" aria-label="Firebase Authentication">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#physical-security" class="md-nav__link">
-    Physical Security
+  <a href="#enable-google-sign-in" class="md-nav__link">
+    Enable Google Sign In
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-library" class="md-nav__link">
+    Importing Library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-functionality" class="md-nav__link">
+    Adding Functionality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-permissions" class="md-nav__link">
+    Setting Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-ui" class="md-nav__link">
+    Changing the UI
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing the UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-dependant-page" class="md-nav__link">
+    State Dependant Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-login-buttons" class="md-nav__link">
+    Adding Login Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-user-info" class="md-nav__link">
+    Displaying User Info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -281,17 +336,72 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-sense" class="md-nav__link">
-    Common Sense
+  <a href="#firebase-authentication" class="md-nav__link">
+    Firebase Authentication
   </a>
   
-    <nav class="md-nav" aria-label="Common Sense">
+    <nav class="md-nav" aria-label="Firebase Authentication">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#physical-security" class="md-nav__link">
-    Physical Security
+  <a href="#enable-google-sign-in" class="md-nav__link">
+    Enable Google Sign In
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-library" class="md-nav__link">
+    Importing Library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-functionality" class="md-nav__link">
+    Adding Functionality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-permissions" class="md-nav__link">
+    Setting Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-ui" class="md-nav__link">
+    Changing the UI
+  </a>
+  
+    <nav class="md-nav" aria-label="Changing the UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-dependant-page" class="md-nav__link">
+    State Dependant Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-login-buttons" class="md-nav__link">
+    Adding Login Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-user-info" class="md-nav__link">
+    Displaying User Info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -317,8 +427,173 @@
                 
                 
                 <h1 id="intro-to-security">Intro to Security</h1>
-<h2 id="common-sense">Common Sense</h2>
-<h3 id="physical-security">Physical Security</h3>
+<h2 id="firebase-authentication">Firebase Authentication</h2>
+<p>Designing a login system from scratch would not only be a complete waste of time, but also introduce security liabilities to our system. </p>
+<p>Using Firebase Auth, we can leverage Google's secure system by embedding a Google SSO (Single Sign On) into our app.</p>
+<h3 id="enable-google-sign-in">Enable Google Sign In</h3>
+<ol>
+<li>Visit the <strong>Authentication</strong> service section of the Firebase dashboard.</li>
+<li>Under <strong>Sign-in Providers</strong>, open the <strong>Google</strong> tab and <strong>enable</strong> the service.</li>
+<li>Under <strong>Authorized domains</strong>, add all the domains that our website is being visited from (including <em>localhost</em> and our Github Pages domain).</li>
+</ol>
+<h3 id="importing-library">Importing Library</h3>
+<ol>
+<li>
+<p>Like the other Firebase libraries, we need to include a script for the Auth library.</p>
+<pre><code>&lt;script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"&gt;&lt;/script&gt;
+</code></pre>
+</li>
+<li>
+<p>After the main <code>firebase</code> object is initialized, we want get an <code>auth</code> object for convinience.</p>
+<pre><code>auth = firebase.auth()
+</code></pre>
+</li>
+<li>
+<p>We also may want to set the persistence level to <code>LOCAL</code> which allows the user to stay logged in even if the page is closed.</p>
+<pre><code>auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+</code></pre>
+</li>
+</ol>
+<h3 id="adding-functionality">Adding Functionality</h3>
+<p>Now we want to add a few extra <code>data</code> fields to handle login state:</p>
+<pre><code>data: {
+    ...
+    signedIn: false,
+    email: "none",
+},
+</code></pre>
+<p>Add some extra functions <code>signIn</code> and <code>signOut</code>. This will launch a pop-up window for Google Sign In, and gracefully end the session if the user explicitly logs out.</p>
+<pre><code>methods: {
+    ...
+    signIn: function () {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider).then(function(result) {
+            console.log( "signed in as: "+result.user.email );
+        });
+    },
+    signOut: function () {
+        auth.signOut().then(function() {
+            console.log( "signed out" );
+        });
+    },
+},
+</code></pre>
+<p>Add this listener in <code>created</code> to handle changes in login. This is the officially recommended way to keep track of login state.</p>
+<pre><code>created: function() {
+    ...
+    auth.onAuthStateChanged(user =&gt; {
+        if (user){
+            this.signedIn = true;
+            this.email = user.email;
+        }
+        else{
+            this.signedIn = false;
+            this.email = "none";
+        }
+    });
+},
+</code></pre>
+<p>At this point our Firebase Authentication system should be fully functional, which we can check by testing <code>vm.signIn()</code> and <code>vm.signOut()</code> in our browser terminal.</p>
+<p>However, the system currently does not actually prevent anyone from accessing our data.</p>
+<h3 id="setting-permissions">Setting Permissions</h3>
+<p>One way we can quickly approach this is to list allowed users in our database and add users to the list manually.</p>
+<p>First, we should create another database structure to store our list of allowed users.</p>
+<ol>
+<li>In Firebase Dashboard &gt; <strong>Authentication</strong>, copy the UID of the user you want to allow (ie yourself).</li>
+<li>In Firebase Dashboard &gt; <strong>Realtime Database</strong> &gt; <strong>Data</strong><ol>
+<li>We add a new entry <code>users</code>, under the root.</li>
+<li>To <code>users</code> we add our UID, with the value <code>true</code> as a placeholder.
+    <img alt="" src="../add-users-db.png" /></li>
+<li>We can also add more users if needed.</li>
+</ol>
+</li>
+</ol>
+<p>Next, we need to change the Realtime Database rules, which currently allow public read/write.</p>
+<ol>
+<li>In Firebase Dashboard, go to <strong>Realtime Database</strong> &gt; <strong>Rules</strong> &gt; <strong>Edit Rules</strong></li>
+<li>
+<p>Replace the rules with something like this:</p>
+<pre><code>{
+    "rules": {
+        ".read"  : "auth != null &amp;&amp; root.child('users').hasChild(auth.uid)",
+        ".write" : "auth != null &amp;&amp; root.child('users').hasChild(auth.uid)"
+    }
+}
+</code></pre>
+<p>This will ensure:</p>
+<ul>
+<li>User is authenticated</li>
+<li>User's UID exists in <code>users</code></li>
+</ul>
+</li>
+</ol>
+<p>Now, if we go back to our app, open the Browser Console, when we try to access data we should see an error message of this type:</p>
+<pre><code>Uncaught (in promise) Error: PERMISSION_DENIED: Permission denied
+</code></pre>
+<p>But if we sign in using <code>vm.signIn()</code> as an allowed user, then we should be able to access data.</p>
+<h3 id="changing-the-ui">Changing the UI</h3>
+<p>At this point we may have realized using the Browser Terminal to authenticate ourselves is not a good user experience. To fix this, we can alter our page using techniques we've already learned to make it more user friendly.</p>
+<h4 id="state-dependant-page">State Dependant Page</h4>
+<p>To start, we should wrap our current page contents in a div, and create another div along side it to hold a future login prompt. We can add <code>v-show</code> directives that depend on our state variable <code>signedIn</code> to show a login panel if the user is not signed in, or our main page if the user is signed in.</p>
+<pre><code>&lt;div v-show="!signedIn"&gt;
+    &lt;!-- Login prompt here...     --&gt;
+&lt;/div&gt;
+&lt;div v-show="signedIn"&gt;
+    &lt;!-- Page contents here...     --&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Although we could certainly use <code>v-if</code>, for performance it's technically better practice to use <code>v-show</code> for lots of elements. <code>v-show</code> simply adds a CSS <code>hidden</code> property to the <code>div</code>, while <code>v-if</code> will require the browser to re-render the contents.</p>
+</div>
+<h4 id="adding-login-buttons">Adding Login Buttons</h4>
+<p>For the login page, we simply copy the header from the main page and add a link-button that will run <code>signIn()</code> when clicked:</p>
+<pre><code>&lt;div class="container mt-5"&gt; 
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg" style="text-align: center;"&gt;
+            &lt;h1 id="title"&gt;{{ titleText }}&lt;/h2&gt;
+            &lt;p&gt;You are not signed in.&lt;/p&gt;
+            &lt;a class="btn btn-primary" v-on:click="signIn()"&gt;Sign In with Google&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>We can also make similar changes to our main page's header to display the user's email, add a link-button to run <code>signOut()</code>, and put a bit of margin for cleanliness:</p>
+<pre><code>&lt;div class="container mt-5"&gt; 
+    &lt;div class="row mb-4"&gt;
+        &lt;div class="col-lg" style="text-align: center;"&gt;
+            &lt;h1 id="title"&gt;{{ titleText }}&lt;/h2&gt;
+            &lt;p&gt;Hello, {{ email }}!&lt;/p&gt;
+            &lt;a class="btn btn-primary" v-on:click="signOut()"&gt;Sign Out&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="displaying-user-info">Displaying User Info</h4>
+<p>When a user logs in via Google, a few details are shared with the app:</p>
+<ul>
+<li>Email address</li>
+<li>Full name</li>
+<li>Profile picture</li>
+</ul>
+<p>Similar to how we got the user email, we can also display the other items as well.</p>
+<p>We can turn our Raspberry Pi card into a user details card like this:</p>
+<pre><code>&lt;div class="col-sm d-flex"&gt;
+    &lt;div class="card w-100"&gt;
+        &lt;img v-bind:src="photoURL" class="card-img-top" &gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Hello, {{displayName}}!&lt;/h5&gt;
+            &lt;p class="card-text"&gt;{{email}}&lt;/p&gt;
+            &lt;a class="btn btn-primary" v-on:click="signOut()"&gt;Sign Out&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>We use the <code>v-bind</code> directive to bind the <code>photoURL</code> variable to the <code>src</code> attribute. Using <code>{{ }}</code> does not work on HTML attributes, only inner HTML content.</p>
+</div>
+<p><img alt="" src="../user-card.png" /></p>
                 
               
               
