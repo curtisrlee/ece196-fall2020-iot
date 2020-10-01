@@ -312,6 +312,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#allowing-domains" class="md-nav__link">
+    Allowing Domains
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -414,6 +421,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowing-domains" class="md-nav__link">
+    Allowing Domains
+  </a>
   
 </li>
         
@@ -606,6 +620,12 @@
 <p>We use the <code>v-bind</code> directive to bind the <code>photoURL</code> variable to the <code>src</code> attribute. Using <code>{{ }}</code> does not work on HTML attributes, only inner HTML content.</p>
 </div>
 <p><img alt="" src="../user-card.png" /></p>
+<h3 id="allowing-domains">Allowing Domains</h3>
+<p>If we access the app on Github Pages, the login popup may not work as expected. By default, Firebase rejects all domains except localhost and their own domain. To solve this, we can add our Github Pages domain:</p>
+<ol>
+<li>In Firebase Dashboard &gt; <strong>Authorized domains</strong>, click <strong>Add Domain</strong></li>
+<li>Add your <code>[username].github.io</code> address to the list.</li>
+</ol>
                 
               
               
