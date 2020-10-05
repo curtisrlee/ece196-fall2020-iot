@@ -224,15 +224,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#raspberry-pi-setup_1" class="md-nav__link">
-    Raspberry Pi Setup
+  <a href="#os-setup" class="md-nav__link">
+    OS Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raspberry-pi-configuration" class="md-nav__link">
-    Raspberry Pi Configuration
+  <a href="#pi-configuration" class="md-nav__link">
+    Pi Configuration
   </a>
   
 </li>
@@ -247,6 +247,47 @@
           <li class="md-nav__item">
   <a href="#optional-downloads" class="md-nav__link">
     Optional Downloads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-hardware" class="md-nav__link">
+    Using Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinouts" class="md-nav__link">
+    Pinouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-hello-world" class="md-nav__link">
+    LED Hello World
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-led" class="md-nav__link">
+    RGB LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht22-sensor" class="md-nav__link">
+    DHT22 Sensor
   </a>
   
 </li>
@@ -371,15 +412,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#raspberry-pi-setup_1" class="md-nav__link">
-    Raspberry Pi Setup
+  <a href="#os-setup" class="md-nav__link">
+    OS Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raspberry-pi-configuration" class="md-nav__link">
-    Raspberry Pi Configuration
+  <a href="#pi-configuration" class="md-nav__link">
+    Pi Configuration
   </a>
   
 </li>
@@ -394,6 +435,47 @@
           <li class="md-nav__item">
   <a href="#optional-downloads" class="md-nav__link">
     Optional Downloads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-hardware" class="md-nav__link">
+    Using Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinouts" class="md-nav__link">
+    Pinouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-hello-world" class="md-nav__link">
+    LED Hello World
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-led" class="md-nav__link">
+    RGB LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht22-sensor" class="md-nav__link">
+    DHT22 Sensor
   </a>
   
 </li>
@@ -437,7 +519,7 @@
 <li>Raspberry Pi is a <a href="https://www.raspberrypi.org/products/">product line</a> of single-board computers aimed at hobbyists and students.</li>
 <li>Small form factor, low cost, and ease-of-use</li>
 <li>CPU is ARM based, similar to those found in smartphones.</li>
-<li>Has USB, HDMI and network outputs like other computers. </li>
+<li>Has USB, HDMI and network connectivity like other computers. </li>
 <li>but also GPIOs like a microcontroller.</li>
 </ul>
 <p>All these characteristics means it's suitable for a wide range of embedded uses!</p>
@@ -466,7 +548,13 @@
   <img alt="image" src="images/image6.jpg" /></li>
 <li>To start using the keyboard, simply insert the Bluetooth dongle into the Raspberry Pi and turn on the keyboard</li>
 </ol>
-<h3 id="raspberry-pi-setup_1">Raspberry Pi Setup</h3>
+<h3 id="os-setup">OS Setup</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The OS for the Raspberry Pi we'll be using is called <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">Raspbian</a>.</p>
+<p>The Raspberry Pi kit should come with an SD card with <a href="https://www.raspberrypi.org/documentation/installation/noobs.md">NOOBS</a> preinstalled. NOOBS allows you start the Pi out-of-the-box and install Raspbian with an internet connection. </p>
+<p>If for some reason the card is empty or corrupted we can also <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">manually flash Raspbian</a>.</p>
+</div>
 <ol>
 <li>Once the RPi boots up, the monitor should show a welcome message. Click Next.</li>
 <li>Raspberry Pi will request you to select the Country, Language, and Timezone. Select the appropriate setting. If you’re using the US Keyboard, make sure to check the box for US Keyboard. Click Next.</li>
@@ -476,7 +564,7 @@
 <li>Once connected to WiFi, RPi will be requesting a software update. Click Next to update software. If there are any errors with the updates, skip this step.</li>
 <li>Once all the configuration is set up, restart the raspberry pi.</li>
 </ol>
-<h3 id="raspberry-pi-configuration">Raspberry Pi Configuration</h3>
+<h3 id="pi-configuration">Pi Configuration</h3>
 <ol>
 <li>Click on the application menu on the top left. Go to Preferences and open up Raspberry Pi Configuration.
   <img alt="image" src="images/image3.png" /></li>
@@ -486,41 +574,131 @@
   <img alt="image" src="images/image1.png" /></li>
 </ol>
 <h3 id="software-setup">Software Setup</h3>
+<p>Run the following commands in the Terminal app: </p>
 <ol>
-<li>First, update and upgrade to the newest packages. Run the following command in the Terminal app: <pre><code>sudo apt update -y
+<li>
+<p>Double check for updates:</p>
+<pre><code>sudo apt update
 sudo apt upgrade -y
 </code></pre>
-</li>
-</ol>
-<p>The above two steps may take a while to execute, depending on how many packages need to be updated.</p>
-<ol>
-<li>If at the end of the above step, there is this error,
-  <img alt="image" src="images/image5.png" />
-  run the following commands:<pre><code>sudo apt-get update
-sudo apt-get upgrade
-</code></pre>
-</li>
-</ol>
-<p>It may take a while for the software to update if it’s the first time updating.</p>
-<ol>
-<li>
-<p>To install Vim, use the following command:</p>
-<pre><code>sudo apt install vim -y
-</code></pre>
+<p>If the software was already updated sucessfully in the previous step, then this should quickly report that everything is up to date. Otherwise, it may take a while to execute, depending on how many packages need to be updated.</p>
 </li>
 <li>
-<p>Once all the update is taken care of, it’s time to install all the python dependencies. To install firebase-admin, run the following command: </p>
+<p>Install firebase-admin: </p>
 <pre><code>pip3 install firebase-admin
 </code></pre>
 </li>
 <li>
-<p>To install the library dependency for the DHT22 sensor, use the following command:</p>
-<pre><code>sudo pip3 install Adafruit_DHT
+<p>Install the library for the DHT22 sensor:</p>
+<pre><code>pip3 install Adafruit_DHT
 </code></pre>
 </li>
 </ol>
 <h3 id="optional-downloads">Optional Downloads</h3>
 <p>To use VNC, <a href="https://www.realvnc.com/en/connect/download/viewer/">download VNC Viewer</a> on your computer. </p>
+<h2 id="using-hardware">Using Hardware</h2>
+<h3 id="pinouts">Pinouts</h3>
+<p>Refer to this pinout diagram for connections:
+<img alt="" src="images/Raspberry-Pi-GPIO-Header-with-Photo-702x336.png" /></p>
+<h3 id="led-hello-world">LED Hello World</h3>
+<p>The first thing we want to try is blinking an LED. This is the circuit equivalent of "Hello World".</p>
+<p>Connect an LED and resistor in series to Pin 17:</p>
+<p><img alt="" src="../rpi-led-hello-world.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always use a resistor to limit the current on the LED to avoid burns! <a href="http://led.linear1.org/why-do-i-need-a-resistor-with-an-led/">See why here.</a></p>
+</div>
+<p>Now in your Pi's Home directory, create a new file called <code>blink.py</code> with this code:</p>
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode( GPIO.BCM  )
+GPIO.setwarnings( False )
+GPIO.setup( 17, GPIO.OUT )
+
+GPIO.output(  17, GPIO.HIGH )
+time.sleep( 1 )
+GPIO.output( 17, GPIO.LOW )
+</code></pre>
+<p>Save and run with Python in a terminal:</p>
+<pre><code>python3 blink.py
+</code></pre>
+<p>The LED should blink on for a second!</p>
+<p>Now try changing the 3rd block to this:</p>
+<pre><code>while True:
+    GPIO.output( 17, GPIO.HIGH )
+    time.sleep( 0.5 )
+    GPIO.output( 17, GPIO.LOW )
+    time.sleep( 0.5 )
+</code></pre>
+<p>The LED should blink on and off indefinitely every second!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Press Ctrl+C in the running terminal to exit the Python script.</p>
+</div>
+<h3 id="rgb-led">RGB LED</h3>
+<p>An RGB LED is actually just 3 different color LEDs (red, green, blue) in a single package. With some combinination these colors we can also create secondary colors.</p>
+<p><img alt="" src="../rgb-led.png" /></p>
+<p>So to connect it to the Raspberry Pi, we can follow the same principle as before, but using 3 different pins.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We also need resistor on each of the 3 seperate color LEDS!</p>
+</div>
+<p>Now lets try blinking through some different colors:</p>
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+RED_PIN = 17
+GREEN_PIN = 27
+BLUE_PIN = 22
+
+GPIO.setup(RED_PIN, GPIO.OUT)
+GPIO.setup(GREEN_PIN, GPIO.OUT)
+GPIO.setup(BLUE_PIN, GPIO.OUT)
+
+def blink( red,green,blue ):
+    GPIO.output(RED_PIN,red)
+    GPIO.output(GREEN_PIN,green)
+    GPIO.output(BLUE_PIN,blue)
+
+    time.sleep( 1 )
+    GPIO.output(RED_PIN,GPIO.LOW)
+    GPIO.output(GREEN_PIN,GPIO.LOW)
+    GPIO.output(BLUE_PIN,GPIO.LOW)
+    time.sleep( 1 )
+
+blink( GPIO.HIGH, GPIO.LOW, GPIO.LOW )    ## Red
+blink( GPIO.HIGH, GPIO.HIGH, GPIO.LOW )   ## Yellow
+blink( GPIO.LOW, GPIO.HIGH, GPIO.LOW )    ## Green
+blink( GPIO.LOW, GPIO.HIGH, GPIO.HIGH )   ## Cyan
+blink( GPIO.LOW, GPIO.LOW, GPIO.HIGH )    ## Blue
+blink( GPIO.HIGH, GPIO.LOW, GPIO.HIGH )   ## Magenta
+blink( GPIO.HIGH, GPIO.HIGH, GPIO.HIGH )  ## White
+</code></pre>
+<h3 id="dht22-sensor">DHT22 Sensor</h3>
+<p><strong><img alt="DHT22/AM230x/RHT0x Temperature and RH Sensor - Espruino" src="https://lh4.googleusercontent.com/hEJ2-a7Cw4fVdAS1jXeO_QKkAmR0HkmUFG8mBB2gBOsUehvFFoazwYq4_mapfdVNOKgUbQQ3rvivL1dnv8jQnMMXzwUQI7tyIESglayaP7lxnKoVilwm4RGEuRU9bXGENvVby8iavs0" /></strong></p>
+<p>The DHT22 sensor is primarily used as a humidity and temperature sensor. We can connect it on a breadboard with a <strong>10k resistor</strong> like this:</p>
+<p><strong><img alt="Raspberry Pi Humidity Sensor DHT22 Wiring Schematic" src="https://lh6.googleusercontent.com/cq5q1W3R3wbgF517ts-uy35mSoQGyv4BS3-UYBGcLjROfCQgFLLkQLwB8mt-DGetqiB89bc7Pqh7Y3SU7G130XUdH8U0y06hbFU_jSd1Gu8cVsls525ApTlq1RVf8aGj-0d-oQV3MPw" /></strong></p>
+<p>Now if we run this code:</p>
+<pre><code>import Adafruit_DHT
+
+DHT_SENSOR = Adaruit_DHT.DHT22
+DHT_PIN = 4
+
+hum, temp = Adaruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+print("Temperature =", temp)
+print("Humidity =", hum)
+</code></pre>
+<p>It will read the sensor and print results. With a loop we can also make run indefinitely at an interval like this:</p>
+<pre><code>while True:
+    hum, temp = Adaruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+    print("Temperature =", temp)
+    print("Humidity =", hum)
+    time.sleep( 10 )
+</code></pre>
 <h2 id="slides">Slides</h2>
 <p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSq1mC40Q7Eu7uXr-sOdkioqP7HsvfAA9rTIQq63MsaLt0Pw3BHyRLQ1Y6hXH5TKEopF2Kpw3OnC3VX/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
                 
