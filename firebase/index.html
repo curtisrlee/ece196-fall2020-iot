@@ -1,0 +1,977 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
+    
+    
+      
+        <title>Firebase - ECE196 IOT Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro-to-backend-development" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="ECE196 IOT Documentation" class="md-header-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            ECE196 IOT Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Firebase
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/curtisrlee/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ECE196 IOT Documentation" class="md-nav__button md-logo" aria-label="ECE196 IOT Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    ECE196 IOT Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/curtisrlee/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../rpi/" title="Raspberry Pi" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Firebase
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Firebase" class="md-nav__link md-nav__link--active">
+      Firebase
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-full-stack" class="md-nav__link">
+    What is Full Stack?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backend" class="md-nav__link">
+    What is Backend?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-firebase" class="md-nav__link">
+    Intro to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-project" class="md-nav__link">
+    Creating a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-collaborators" class="md-nav__link">
+    Adding Collaborators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realtime-database" class="md-nav__link">
+    Realtime Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Realtime Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-database" class="md-nav__link">
+    Choosing a Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-database" class="md-nav__link">
+    Creating a Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-keys" class="md-nav__link">
+    Obtaining Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-service-account" class="md-nav__link">
+    Adding a Service Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-app" class="md-nav__link">
+    Adding an App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-firebase" class="md-nav__link">
+    Connecting to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-code" class="md-nav__link">
+    Complete Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web/" title="VueJS" class="md-nav__link">
+      VueJS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bootstrap/" title="Bootstrap" class="md-nav__link">
+      Bootstrap
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../secure/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-full-stack" class="md-nav__link">
+    What is Full Stack?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-backend" class="md-nav__link">
+    What is Backend?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-firebase" class="md-nav__link">
+    Intro to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Intro to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-project" class="md-nav__link">
+    Creating a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-collaborators" class="md-nav__link">
+    Adding Collaborators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realtime-database" class="md-nav__link">
+    Realtime Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Realtime Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-database" class="md-nav__link">
+    Choosing a Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-database" class="md-nav__link">
+    Creating a Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-keys" class="md-nav__link">
+    Obtaining Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-service-account" class="md-nav__link">
+    Adding a Service Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-app" class="md-nav__link">
+    Adding an App
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-firebase" class="md-nav__link">
+    Connecting to Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-code" class="md-nav__link">
+    Complete Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/curtisrlee/edit/master/docs/firebase.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="intro-to-backend-development">Intro to Backend Development</h1>
+<p><em>Written by Curtis Lee. Pictures by by Ravi Patel.</em></p>
+<h2 id="fundamentals">Fundamentals</h2>
+<h3 id="what-is-full-stack">What is Full Stack?</h3>
+<p>It boils down to three (3) concepts:</p>
+<ol>
+<li><strong>Frontend</strong> software that the user sees and interacts with.</li>
+<li><strong>Backend</strong> software that can handle specific requests and dynamically sends/recieves information to/from the user.</li>
+<li><strong>Database</strong> that stores pretty much all information our app uses.</li>
+</ol>
+<p>There are endless configurations depending on the application. Sometimes, these components may be combined or further seperated to varying degrees. 
+Regardless, all components must work together to produce a web app. </p>
+<p>Imagine a trinity of cards: <strong>Frontend</strong>, <strong>Backend</strong>, and <strong>Database</strong>. A developer that holds all three cards is said to have the "<strong>Full Stack</strong>", and thus can build a complete web app.</p>
+<h3 id="what-is-backend">What is Backend?</h3>
+<p>In traditional web development, backend software runs the "business logic" of our app. For example, a basic workflow may be like this:</p>
+<ol>
+<li>The user fills out a login form on our app.</li>
+<li>The user's browser sends a login request + the credentials to the backend server.</li>
+<li>The backend recieves this information.</li>
+<li>The backend queries the database to see if the user exists.</li>
+<li>If the user exists, see if username &amp; password match.</li>
+<li>If everything is correct, send our content back to the user. Otherwise, send an error message.</li>
+</ol>
+<p>Setting up a backend server is usually not easy. We would need to have extensive knowledge of setting up servers, networking, operating systems, and software. And that's before we even write any code, which may also require mastering multiple programming languages!</p>
+<p>This is not feasible without the proper expertise and lots of time. So we will not be doing that. </p>
+<p>Instead, we will leverage <strong>Cloud Services</strong> that do the hard work for us, so we can better focus on our ideas.</p>
+<h2 id="intro-to-firebase">Intro to Firebase</h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>Firebase is Backend as a Service ( BaaS ) by Google.</p>
+</div>
+<p>Firebase is Google's solution to the problem. Firebase has reduced the entire <strong>Backend + Database</strong> stack into simpler services that we can rent out. Essentially, we are outsourcing all the hard technical work to Google.</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>Using Firebase is comparable to using any other Google cloud service like Gmail or Drive. First, we create a <strong>Project</strong> for our product. Then we can add different services such as <strong>Realtime Database</strong> or <strong>Authentication</strong> and create keys to be used by one or more <strong>Apps</strong> utilizng our Project's services.</p>
+<h4 id="creating-a-project">Creating a Project</h4>
+<ol>
+<li>
+<p>Sign in to <a href="https://firebase.google.com/">firebase.google.com</a> (feel free to use your UCSD account)</p>
+</li>
+<li>
+<p>Click <strong>Go to Console</strong> in the top right corner.</p>
+</li>
+<li>
+<p>Click <strong>Add Project</strong>.</p>
+</li>
+<li>
+<p>Fill out the forms and continue.</p>
+<ol>
+<li>Any name is ok. I recommend <em>ECE196-Fall2020-IOT-YourName</em>.</li>
+<li>Google Analytics is optional. We won't be using it, but it could be nice to have if we further develop the app later.</li>
+<li>Accept terms and conditions.</li>
+</ol>
+</li>
+<li>
+<p>Once everything is set up, it should look something similar to this.</p>
+</li>
+</ol>
+<p><img alt="" src="https://lh6.googleusercontent.com/Uk1D4WbEufLgK8wvS6Tpr2DyEW_lRnUAVz8vUy_P80Wc-BtX3rKisuyLvin_Pn8x50vzD7RSbpG-Sg47NMkKr1smTg29LbO-BaTKHuuv8_cVPeFHmv1WT3JGLH5ye0KmZi_P5cFL" /></p>
+<h4 id="adding-collaborators">Adding Collaborators</h4>
+<ol>
+<li>To add collaborators to the project, click on the <strong>Settings</strong> icon located on the top left. </li>
+<li>Select <strong>Users and permissions</strong>.</li>
+<li>Click the <strong>Add member</strong> button.</li>
+<li>As for roles, select either <strong>Owner</strong> or <strong>Editor</strong>. This can always be changed later.</li>
+<li>Once the member is added, they should receive an email invitation to join.</li>
+</ol>
+<h3 id="realtime-database">Realtime Database</h3>
+<h4 id="choosing-a-database">Choosing a Database</h4>
+<p>Firebase offers two different products for our Database needs. </p>
+<p>For the Free Plan as of 2020, here are the key similarities and differences:</p>
+<table>
+<thead>
+<tr>
+<th>Spec</th>
+<th>Realtime</th>
+<th>Firestore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>NoSQL</td>
+<td>NoSQL</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Basic JSON</td>
+<td>Documents &amp; Collections</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>10 GB</td>
+<td>10 GB</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>10GiB/month</td>
+<td>10GiB/month</td>
+</tr>
+<tr>
+<td>Simultaneous Connections</td>
+<td>100 max</td>
+<td>No limit</td>
+</tr>
+<tr>
+<td>Document writes</td>
+<td>No limit</td>
+<td>20K/day</td>
+</tr>
+<tr>
+<td>Document reads</td>
+<td>No limit</td>
+<td>50K/day</td>
+</tr>
+<tr>
+<td>Document deletes</td>
+<td>No limit</td>
+<td>20K/day</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Read More</p>
+<ul>
+<li><a href="https://firebase.google.com/docs/database/rtdb-vs-firestore">Cloud Firestore vs Realtime Database</a></li>
+<li><a href="https://firebase.google.com/pricing">Firebase Pricing plans</a></li>
+<li><a href="https://www.mongodb.com/nosql-explained/nosql-vs-sql">SQL vs NoSQL</a></li>
+</ul>
+</div>
+<p>For our application, we will pick <strong>Realtime Database</strong>, for these reasons:</p>
+<ul>
+<li>Basic JSON structure is easy to learn</li>
+<li>Not many users, but document I/O adds up fast.</li>
+</ul>
+<h4 id="creating-a-database">Creating a Database</h4>
+<ol>
+<li>
+<p>Open the <strong>Realtime Database</strong> service on the sidebar:</p>
+<p><img alt="" src="../realtime-db-sidenav.png" /></p>
+</li>
+<li>
+<p>Start in <strong>Test Mode</strong>.</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/kOvoPWYkoMVs0Dn9kkAwimnZ8TScdBc_R54oLHmhbGXQ0MrrLlhmIop1qC-vMwQoTb5LtrB-0AgAaIDlSDZnAhgoKEnmFPTggTAx5PXvFrizy-8m4ygPedXT3a-RR5SU-zCTQ-Bv" /></p>
+</li>
+<li>
+<p>Click on the <strong>Rules</strong> tab and verify read and write access is set to <code>true</code>.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/p0bQm-l1TuitaagDSDMB6n1V_M950JddpQQ7L7YHUNxv8lpHazUmkW3JIThI18o4DWp8smniKnj8CWeFhvf4yvdsn7-qcVgOw6Q2V-WB7J-VeVzN4XK5nUts-vWf2Rz5LQyJHLN0" /></p>
+</li>
+</ol>
+<h3 id="obtaining-keys">Obtaining Keys</h3>
+<h4 id="adding-a-service-account">Adding a Service Account</h4>
+<p>To connect our Raspberry Pi to Firebase, we need to generate a Service Account key to use Firebase Admin SDK. </p>
+<ol>
+<li>Click on the project's <strong>Settings</strong> icon and click on <strong>Project Settings</strong></li>
+<li>Navigate to the <strong>Service Accounts</strong> tab.</li>
+<li>Click <strong>Generate new Private Key</strong>.
+    <img alt="" src="https://lh5.googleusercontent.com/0iqy0J5bxSS5JDrDVZf9Iv6F3p0MyTAHkYqbAIMUhUMA7gii5wNjQAxKas5dmpJ_YH83Yf2rMGPijlMt6UOTiSMedqF7UgsFMQQxuNCY2CI6zP6knESJYJuVSJ4jA5cFS0_1_fIU" /></li>
+<li>Save this project key somewhere where we can later copy it to the Raspberry Pi.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your private key gives access to your project's Firebase services. Keep it confidential and never store it in a public repository. Store this file securely, because your new key can't be recovered if lost.</p>
+<p>If using Git, always add the name of this file to the project's .gitignore.</p>
+</div>
+<h4 id="adding-an-app">Adding an App</h4>
+<ol>
+<li>Also in <strong>Settings</strong>, under <strong>General</strong> tab and <strong>Your Apps</strong> section, click <strong>Add App</strong>. Select the <strong>Web</strong> platform.</li>
+<li>Fill out the form<ol>
+<li>Any name is ok. I recommend <em>Web App</em>.</li>
+<li>We won't be using Firebase Hosting for now. (instead we'll use GitHub Pages later on)</li>
+</ol>
+</li>
+<li>It should now spit out some info under <strong>Add Firebase SDK</strong>. The important part we care about is the <code>var firebaseConfig</code> dictionary. We can always come back to view this information anytime. <pre><code>const firebaseConfig = {
+    apiKey: ...
+    authDomain: ...
+    databaseURL: ...
+    projectId: ...
+    storageBucket: ...
+    messagingSenderId: ...
+    appId: ...
+    measurementId: ...
+};
+</code></pre>
+</li>
+</ol>
+<p>We won't need this App key until the Frontend portion.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Technically, none of the <code>var firebaseConfig</code> fields are sensitive information. In fact, this information will later be necessary for the end user to access our app. It is OK to commit this to the Git repository.</p>
+</div>
+<h2 id="connecting-to-firebase">Connecting to Firebase</h2>
+<p>To send data to the cloud, our Raspberry Pi needs to connect to Firebase.</p>
+<p>We first import the libraries and initialize Firebase Admin:</p>
+<pre><code>import firebase_admin
+from firebase_admin import credentials
+cred = credentials.Certificate(  “PATH_TO_SERVICE_ACCOUNT_FILE.json”  )
+firebase_admin.initialize_app( cred, { “databaseURL”:  “LINK_TO_DATABASE_URL” } )
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>replace the PATH_TO_SERVICE_ACCOUNT_FILE with the appropriate path</li>
+<li>replace the LINK_TO_DATABASE_URL with the appropriate URL</li>
+<li>Ues the following link to refer to the official documentation</li>
+</ul>
+</div>
+<p>We also need to import the library for database and get a Reference.</p>
+<pre><code>from firebase_admin import db
+db_ref = db.reference(  “PATH_TO_REFERENCE”  )
+db_ref.set( VALUE )
+data = db_ref.get()
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>replace the PATH_TO_REFERENCE with the appropriate path</li>
+<li>replace VALUE with the appropriate value</li>
+</ul>
+</div>
+<h4 id="complete-code">Complete Code</h4>
+<p>Should look similar to this:</p>
+<pre><code>import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+import Adafruit_DHT
+
+DHT_SENSOR = Adaruit_DHT.DHT22
+DHT_PIN = 4
+
+cred = credentials.Certificate(  “PATH_TO_SERVICE_ACCOUNT_FILE.json”  )
+firebase_admin.initialize_app( cred, { “databaseURL”:  “LINK_TO_DATABASE_URL” } )
+
+while True:
+    hum, temp = Adaruit_DHT.read_retry(  DHT_SENSOR,  DHT_PIN  )
+
+    temp_ref = db.reference(  “sensor/temperature”  )
+    temp_ref.set( temp )
+
+    hum_ref = db.reference(  “sensor/humidity”  )
+    hum_ref.set( hum )
+
+    print( “Humidity =”, hum )
+    print( “Temperature =”, temp)
+
+    time.sleep( 10 )
+</code></pre>
+<h2 id="slides">Slides</h2>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRXBqF9I6MXXwBKcu45NoCoyln25HrDJi9zKSZkGfG9stEYkd0YLoFFBT-zdKhrTAxJbKU02XXR1s_t/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../rpi/" title="Raspberry Pi" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Raspberry Pi
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../web/" title="VueJS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                VueJS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.github.com/curtisrlee" target="_blank" rel="noopener" title="www.github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/in/curtisrlee" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/curtisrlee98" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
