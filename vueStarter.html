@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My App</title>
+    </head>
+    <style>
+        /* Your CSS tweaks go here */
+
+        [v-cloak] {
+            display: none;
+        }
+
+    </style>
+    <body>
+        <!-- Your HTML go here -->
+
+        <div id="app" v-cloak>
+            <h1 id="title">{{ titleText }}</h1>
+            <p>Hello world!</p>
+        </div>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+        // Your JavaScript codes go here
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                titleText: "My First App",
+            },
+            created: function() {},
+            mounted: function() {},
+            methods: {}
+        });
+
+    </script>
+</html>
