@@ -373,6 +373,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#more-hardware" class="md-nav__link">
+    More Hardware
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -436,6 +443,18 @@
   <li class="md-nav__item">
     <a href="../secure/" title="Security" class="md-nav__link">
       Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../graphs/" title="Graphs" class="md-nav__link">
+      Graphs
     </a>
   </li>
 
@@ -616,6 +635,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#more-hardware" class="md-nav__link">
+    More Hardware
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -645,7 +671,7 @@
                 
                 
                 <h1 id="intro-to-raspberry-pi">Intro to Raspberry Pi</h1>
-<p><em>Original content by Ravi Patel. Rewritten by Curtis Lee.</em></p>
+<p><em>Rewritten by Curtis Lee, originally by Ravi Patel</em></p>
 <div class="admonition note">
 <p class="admonition-title">Recommended Reading</p>
 <p>Please read the <a href="https://cdn.shopify.com/s/files/1/0195/1344/2404/files/QUICKSTART_09_06_2017_EDITION.pdf?4444633349731588961">Vilros Quick Start Guide</a> (included with the Raspberry Pi kit) up to section 2.5 (and skip 2.3).</p>
@@ -886,6 +912,11 @@ print("Humidity =", hum, '%')
     print("Humidity =", hum, '%')
     time.sleep( 2 )
 </code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you have some error with <code>libgpio_pulsein</code>, you may have to kill the existing process using that library.</p>
+<p>Try running this terminal command: <code>kill $(pgrep libgpio)</code></p>
+</div>
 <h3 id="buttons">Buttons</h3>
 <p>To connect a button, we don't need external components as long as it's connected to an input pin with pullup enabled.</p>
 <p><img alt="" src="../img/schematic_combined_bb.png" /></p>
@@ -914,9 +945,33 @@ input("press enter 2 quit\n") # block program from exiting
 <p>coming soon maybe</p>
 <h3 id="lcd-screen">LCD Screen</h3>
 <p>also maybe</p>
+<h3 id="more-hardware">More Hardware</h3>
+<p>There are nearly endless hardware components that you can use with the Raspberry Pi, including but not limited to the items in kit. If you would like to use other hardware components, here's some things to keep in mind:</p>
+<ul>
+<li>The Pi's GPIO's are all 3.3v based, and supply limited current only. <ul>
+<li>To use 5.0v hardware, you may need a level shifter to prevent burning the pins.</li>
+<li>To use high power components like motor, you will need an external power source, the Pi cannot supply enough power.</li>
+</ul>
+</li>
+<li>To figure out how to use a new module, do research:<ul>
+<li>Check Pi tutorials, for popular components chances are that someone else has already figured it out.</li>
+<li>Check Arduino tutorials, for the same reason.</li>
+<li>Check datasheets/documentation for reference, but sometimes they can be very advanced.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<ul>
+<li>Do not plug jumper wires directly into the wall outlet.</li>
+<li>Do not plug jumper wires from the wall into the Pi.</li>
+<li>Do not plug jumper wires from the wall into the breadboard.</li>
+<li>Do not eat electronic components.</li>
+</ul>
+</div>
 <h2 id="autoloading-scripts">Autoloading Scripts</h2>
 <p>coming soon</p>
-<p>we can load python script on boot</p>
+<p>we can load python script on boot.  then pi run them automatically when pwoered on.</p>
                 
               
               
