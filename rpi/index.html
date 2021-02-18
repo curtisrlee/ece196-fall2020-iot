@@ -847,6 +847,10 @@ blink( GPIO.HIGH, GPIO.HIGH, GPIO.HIGH )  ## White
 <p>The <a href="https://learn.adafruit.com/dht">DHT sensors</a> are humidity and temperature sensors. We are using the <strong>DHT22</strong>, but there is also a blue DHT11 sensor, which is a cheaper but less precise version.</p>
 <p>We can connect it on a breadboard with a <strong>10k resistor</strong> like this:</p>
 <p><img alt="" src="../img/schematic_combined_2.png" /></p>
+<p>First, we need to open the terminal and install some libraries:</p>
+<pre><code>pip3 install adafruit-circuitpython-dht
+sudo apt-get install libgpiod2
+</code></pre>
 <p>Now if we run this code:</p>
 <pre><code>import adafruit_dht
 import board
