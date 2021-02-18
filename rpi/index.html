@@ -851,6 +851,7 @@ blink( GPIO.HIGH, GPIO.HIGH, GPIO.HIGH )  ## White
 <pre><code>pip3 install adafruit-circuitpython-dht
 sudo apt-get install libgpiod2
 </code></pre>
+<p>We also may need to reboot the Pi after installing if it doesn't work.</p>
 <p>Now if we run this code:</p>
 <pre><code>import adafruit_dht
 import board
@@ -878,6 +879,8 @@ print("Humidity =", hum, '%')
 <p class="admonition-title">Info</p>
 <p>If you have some error with <code>libgpio_pulsein</code>, you may have to kill the existing process using that library.</p>
 <p>Try running this terminal command: <code>kill $(pgrep libgpio)</code></p>
+<p>Alternatively, you can initialize <code>dht_sensor</code> without pulseio like this: </p>
+<p><code>dht_sensor = adafruit_dht.DHT22(dht_pin, use_pulseio=False)</code></p>
 </div>
 <h3 id="buttons">Buttons</h3>
 <p>To connect a button, we don't need external components as long as it's connected to an input pin with pullup enabled.</p>
