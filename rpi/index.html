@@ -360,6 +360,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#serialuart" class="md-nav__link">
+    Serial/UART
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#more-hardware" class="md-nav__link">
     More Hardware
   </a>
@@ -596,6 +603,13 @@
           <li class="md-nav__item">
   <a href="#buttons" class="md-nav__link">
     Buttons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serialuart" class="md-nav__link">
+    Serial/UART
   </a>
   
 </li>
@@ -904,7 +918,27 @@ input("press enter 2 quit\n") # block program from exiting
 <li>Since the button is wired straight to <strong>Ground</strong>, we should enable the internal <a href="https://learn.sparkfun.com/tutorials/pull-up-resistors/all"><strong>Pull Up</strong> resistor</a> and detect a <strong>Falling Edge</strong>.</li>
 <li>We need a <a href="https://www.allaboutcircuits.com/technical-articles/switch-bounce-how-to-deal-with-it/"><strong>debouncing</strong></a> time in the <strong>milliseconds</strong>.</li>
 <li>Adding an event callback means the <strong>callback function</strong> will run <strong>asynchronously</strong> from the main program execution. If there are no more code to run, we need to block execution or the entire script will just exit.</li>
+<li><code>GPIO.cleanup()</code> can be used to resolved state errors.</li>
 </ul>
+<h3 id="serialuart">Serial/UART</h3>
+<p>The simplest way to communicate with an Arduino, BT module, and many external devices is to use serial. This process is the exact same as it would be on any generic Linux computer.</p>
+<p>First, we need to find available serial ports by entering into the console:</p>
+<pre><code>ls /dev/tty*
+</code></pre>
+<p>A good trick to find the correct port USB serial devices is to run it before and after plugging it in.</p>
+<p>Usually it will be <code>/dev/ttyUSB0</code> if it's the only one plugged in.</p>
+<p>Here is an example to send a single byte from python script to the external device:</p>
+<pre><code>import serial
+
+ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+user_input = input("pls enter a byte:" )
+user_input = user_input.encode('utf_8')
+ser.write(user_input)
+line = ser.readline()
+print(line.decode('utf_8'))
+ser.close()
+</code></pre>
+<p><a href="https://drive.google.com/drive/u/1/folders/1pWqNAAlfToCkn8ogAFkDbfGXh-AHft0g">Link to Examples from class</a></p>
 <h3 id="more-hardware">More Hardware</h3>
 <p>There are nearly endless hardware components that you can use with the Raspberry Pi, including but not limited to the items in kit. If you would like to use other hardware components, here's some things to keep in mind:</p>
 <ul>
